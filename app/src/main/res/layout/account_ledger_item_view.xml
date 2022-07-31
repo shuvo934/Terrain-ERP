@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:background="@color/back_color">
+
+    <TextView
+        android:id="@+id/acc_led_date"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:gravity="center"
+        android:text="Date"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/black"/>
+
+    <TextView
+        android:id="@+id/voucher_no_acc_led"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:gravity="center"
+        android:text="Voucher No"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/black"/>
+
+    <TextView
+        android:id="@+id/particulars_acc_led"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:gravity="center"
+        android:text="Particulars"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/black"/>
+
+    <TextView
+        android:id="@+id/debit_acc_led"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:gravity="center"
+        android:text="Debit"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/black"/>
+    <TextView
+        android:id="@+id/credit_acc_led"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:gravity="center"
+        android:text="Credit"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/black"/>
+    <TextView
+        android:id="@+id/balance_acc_led"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:gravity="center"
+        android:text="Balance"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+
+
+</LinearLayout>

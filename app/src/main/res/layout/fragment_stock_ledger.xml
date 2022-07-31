@@ -1,0 +1,2006 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/back_color"
+    tools:context=".fragments.StockLedgerFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/back_color"
+            app:cardElevation="2dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:id="@+id/w_o_logo"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ledger"
+                    app:tint="@color/on_primary" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="16dp"
+                    android:layout_toEndOf="@+id/w_o_logo"
+                    android:fontFamily="@font/russo_one"
+                    android:text="Store Ledger"
+                    android:textColor="@color/on_primary"
+                    android:textSize="17sp" />
+
+
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp"
+                    android:weightSum="1">
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="2.5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight=".5"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="2dp"
+                        app:cardBackgroundColor="@color/white">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/on_primary">
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="1dp"
+                                app:boxCornerRadiusTopStart="10dp"
+                                app:boxCornerRadiusTopEnd="10dp"
+                                app:boxCornerRadiusBottomEnd="10dp"
+                                app:boxCornerRadiusBottomStart="10dp"
+                                app:boxBackgroundColor="@color/white"
+                                app:boxBackgroundMode="filled"
+                                app:boxStrokeWidth="0dp"
+                                android:clickable="true"
+                                android:focusable="false"
+                                android:hint="Begin Date"
+                                app:startIconDrawable="@drawable/calendar_icon"
+                                app:startIconTintMode="screen"
+                                app:startIconTint="@android:color/transparent">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/begin_date_stock_ledger"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text=""
+                                    android:clickable="true"
+                                    android:focusable="false"
+                                    android:inputType="date"
+                                    android:imeOptions="actionDone"
+                                    android:textColor="@color/black"/>
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="2.5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight=".5"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="2dp"
+                        app:cardBackgroundColor="@color/white">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/on_primary">
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="1dp"
+                                app:boxCornerRadiusTopStart="10dp"
+                                app:boxCornerRadiusTopEnd="10dp"
+                                app:boxCornerRadiusBottomEnd="10dp"
+                                app:boxCornerRadiusBottomStart="10dp"
+                                app:boxBackgroundColor="@color/white"
+                                app:boxBackgroundMode="filled"
+                                app:boxStrokeWidth="0dp"
+                                android:hint="End Date"
+                                android:clickable="true"
+                                android:focusable="false"
+                                app:startIconDrawable="@drawable/calendar_icon"
+                                app:startIconTintMode="screen"
+                                app:startIconTint="@android:color/transparent">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/end_date_stock_ledger"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text=""
+                                    android:inputType="date"
+                                    android:clickable="true"
+                                    android:focusable="false"
+                                    android:imeOptions="actionDone"
+                                    android:textColor="@color/black"/>
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/date_range_msg_stock_ledger"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Date Range is Invalid"
+                    android:textColor="@android:color/holo_red_light"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    android:gravity="center"
+                    android:layout_marginBottom="5dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="2.5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_weight=".5"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="2dp"
+                        app:cardBackgroundColor="@color/white">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/on_primary">
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/spinner_layout_cat_item_stock_ledger"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="1dp"
+                                app:boxCornerRadiusTopStart="10dp"
+                                app:boxCornerRadiusTopEnd="10dp"
+                                app:boxCornerRadiusBottomEnd="10dp"
+                                app:boxCornerRadiusBottomStart="10dp"
+                                app:boxBackgroundColor="@color/white"
+                                app:boxBackgroundMode="filled"
+                                app:endIconMode="dropdown_menu"
+                                app:boxStrokeWidth="0dp"
+                                android:hint="Category"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                                >
+
+                                <com.rosemaryapp.amazingspinner.AmazingSpinner
+                                    android:id="@+id/cat_type_spinner_item_stock_ledger"
+                                    style="@style/Widget.MaterialComponents.AutoCompleteTextView.FilledBox"
+                                    android:layout_width="match_parent"
+                                    android:text=""
+                                    android:layout_height="wrap_content"
+                                    />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="2.5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_weight=".5"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="2dp"
+                        app:cardBackgroundColor="@color/white">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/on_primary">
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/spinner_layout_sub_cat_item_stock_ledger"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="1dp"
+                                app:boxCornerRadiusTopStart="10dp"
+                                app:boxCornerRadiusTopEnd="10dp"
+                                app:boxCornerRadiusBottomEnd="10dp"
+                                app:boxCornerRadiusBottomStart="10dp"
+                                app:boxBackgroundColor="@color/white"
+                                app:boxBackgroundMode="filled"
+                                app:endIconMode="dropdown_menu"
+                                app:boxStrokeWidth="0dp"
+                                android:hint="Sub Category"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                                >
+
+                                <com.rosemaryapp.amazingspinner.AmazingSpinner
+                                    android:id="@+id/sub_cat_type_spinner_item_stock_ledger"
+                                    style="@style/Widget.MaterialComponents.AutoCompleteTextView.FilledBox"
+                                    android:layout_width="match_parent"
+                                    android:text=""
+                                    android:layout_height="wrap_content"
+                                    />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="2.5dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="2dp"
+                    app:cardBackgroundColor="@color/white">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/on_primary">
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/search_item_name_lay_stock_item_ledger"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:hint="Search Item or Item Code"
+                            app:startIconDrawable="@drawable/search_24"
+                            app:startIconTint="@color/cardview_dark_background"
+                            app:boxCornerRadiusTopStart="10dp"
+                            app:boxCornerRadiusTopEnd="10dp"
+                            app:boxCornerRadiusBottomEnd="10dp"
+                            app:boxCornerRadiusBottomStart="10dp"
+                            app:boxStrokeWidthFocused="1dp"
+                            app:helperText=""
+                            app:boxBackgroundColor="@color/white"
+                            app:boxBackgroundMode="filled"
+                            app:boxStrokeWidth="0dp"
+                            app:helperTextEnabled="true"
+                            android:textColorHint="#b2bef2">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/search_item_name_stock_item_ledger"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:ems="10"
+                                android:imeOptions="actionSearch"
+                                android:inputType="text"
+                                android:textColor="#636e72"
+                                android:textStyle="bold" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
+                    app:cardElevation="2dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="10dp">
+
+                    <HorizontalScrollView
+                        android:id="@+id/horizontal_scroll_store_ledger"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:descendantFocusability="beforeDescendants"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:scrollbars="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginEnd="5dp"
+                                android:layout_marginTop="5dp"
+                                >
+
+                                <TextView
+                                    android:layout_width="30dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:gravity="center"
+                                    android:text="SL NO"
+                                    android:textColor="@color/on_primary"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/black"/>
+
+                                <TextView
+                                    android:layout_width="100dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="Item Name"
+                                    android:gravity="center"
+
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/on_primary"
+                                    />
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/black"/>
+                                <TextView
+                                    android:layout_width="80dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="Item Code"
+                                    android:gravity="center"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/on_primary"
+                                    />
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/black"/>
+
+                                <TextView
+                                    android:layout_width="80dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="HS Code"
+                                    android:gravity="center"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/on_primary"
+                                    android:textSize="12sp"
+                                    />
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/black"/>
+                                <TextView
+                                    android:layout_width="50dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="Unit"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:gravity="center"
+                                    android:layout_gravity="center"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/on_primary"
+                                    />
+
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/black"/>
+
+                                <LinearLayout
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Opening"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginEnd="5dp"
+                                        android:layout_gravity="center"
+                                        android:gravity="center"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/on_primary"
+                                        android:textSize="12sp"
+                                        />
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:background="@android:color/black"/>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+                                        <TextView
+                                            android:layout_width="64.5dp"
+                                            android:layout_height="wrap_content"
+                                            android:text="Qty"
+                                            android:layout_marginStart="5dp"
+                                            android:layout_marginEnd="5dp"
+                                            android:layout_gravity="center"
+                                            android:gravity="center"
+                                            android:textStyle="bold"
+                                            android:textColor="@color/on_primary"
+                                            android:textSize="12sp"
+                                            />
+                                        <View
+                                            android:layout_width="1dp"
+                                            android:layout_height="match_parent"
+                                            android:background="@android:color/black"/>
+
+                                        <TextView
+                                            android:layout_width="64.5dp"
+                                            android:layout_height="wrap_content"
+                                            android:text="Value"
+                                            android:layout_marginStart="5dp"
+                                            android:layout_marginEnd="5dp"
+                                            android:layout_gravity="center"
+                                            android:gravity="center"
+                                            android:textStyle="bold"
+                                            android:textColor="@color/on_primary"
+                                            android:textSize="12sp"
+                                            />
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/black"/>
+
+
+                                <LinearLayout
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Receive"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginEnd="5dp"
+                                        android:layout_gravity="center"
+                                        android:gravity="center"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/on_primary"
+                                        android:textSize="12sp"
+                                        />
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:background="@android:color/black"/>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+                                        <TextView
+                                            android:layout_width="64.5dp"
+                                            android:layout_height="wrap_content"
+                                            android:text="Qty"
+                                            android:layout_marginStart="5dp"
+                                            android:layout_marginEnd="5dp"
+                                            android:layout_gravity="center"
+                                            android:gravity="center"
+                                            android:textStyle="bold"
+                                            android:textColor="@color/on_primary"
+                                            android:textSize="12sp"
+                                            />
+                                        <View
+                                            android:layout_width="1dp"
+                                            android:layout_height="match_parent"
+                                            android:background="@android:color/black"/>
+
+                                        <TextView
+                                            android:layout_width="64.5dp"
+                                            android:layout_height="wrap_content"
+                                            android:text="Value"
+                                            android:layout_marginStart="5dp"
+                                            android:layout_marginEnd="5dp"
+                                            android:layout_gravity="center"
+                                            android:gravity="center"
+                                            android:textStyle="bold"
+                                            android:textColor="@color/on_primary"
+                                            android:textSize="12sp"
+                                            />
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/black"/>
+
+                                <LinearLayout
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Transfer Receive(R)"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginEnd="5dp"
+                                        android:layout_gravity="center"
+                                        android:gravity="center"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/on_primary"
+                                        android:textSize="12sp"
+                                        />
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:background="@android:color/black"/>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+                                        <TextView
+                                            android:layout_width="64.5dp"
+                                            android:layout_height="wrap_content"
+                                            android:text="Qty"
+                                            android:layout_marginStart="5dp"
+                                            android:layout_marginEnd="5dp"
+                                            android:layout_gravity="center"
+                                            android:gravity="center"
+                                            android:textStyle="bold"
+                                            android:textColor="@color/on_primary"
+                                            android:textSize="12sp"
+                                            />
+                                        <View
+                                            android:layout_width="1dp"
+                                            android:layout_height="match_parent"
+                                            android:background="@android:color/black"/>
+
+                                        <TextView
+                                            android:layout_width="64.5dp"
+                                            android:layout_height="wrap_content"
+                                            android:text="Value"
+                                            android:layout_marginStart="5dp"
+                                            android:layout_marginEnd="5dp"
+                                            android:layout_gravity="center"
+                                            android:gravity="center"
+                                            android:textStyle="bold"
+                                            android:textColor="@color/on_primary"
+                                            android:textSize="12sp"
+                                            />
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/black"/>
+
+                                <LinearLayout
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Sales Return"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginEnd="5dp"
+                                        android:layout_gravity="center"
+                                        android:gravity="center"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/on_primary"
+                                        android:textSize="12sp"
+                                        />
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:background="@android:color/black"/>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+                                        <TextView
+                                            android:layout_width="64.5dp"
+                                            android:layout_height="wrap_content"
+                                            android:text="Qty"
+                                            android:layout_marginStart="5dp"
+                                            android:layout_marginEnd="5dp"
+                                            android:layout_gravity="center"
+                                            android:gravity="center"
+                                            android:textStyle="bold"
+                                            android:textColor="@color/on_primary"
+                                            android:textSize="12sp"
+                                            />
+                                        <View
+                                            android:layout_width="1dp"
+                                            android:layout_height="match_parent"
+                                            android:background="@android:color/black"/>
+
+                                        <TextView
+                                            android:layout_width="64.5dp"
+                                            android:layout_height="wrap_content"
+                                            android:text="Value"
+                                            android:layout_marginStart="5dp"
+                                            android:layout_marginEnd="5dp"
+                                            android:layout_gravity="center"
+                                            android:gravity="center"
+                                            android:textStyle="bold"
+                                            android:textColor="@color/on_primary"
+                                            android:textSize="12sp"
+                                            />
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/black"/>
+
+                                <LinearLayout
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Issue Return"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginEnd="5dp"
+                                        android:layout_gravity="center"
+                                        android:gravity="center"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/on_primary"
+                                        android:textSize="12sp"
+                                        />
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:background="@android:color/black"/>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+                                        <TextView
+                                            android:layout_width="64.5dp"
+                                            android:layout_height="wrap_content"
+                                            android:text="Qty"
+                                            android:layout_marginStart="5dp"
+                                            android:layout_marginEnd="5dp"
+                                            android:layout_gravity="center"
+                                            android:gravity="center"
+                                            android:textStyle="bold"
+                                            android:textColor="@color/on_primary"
+                                            android:textSize="12sp"
+                                            />
+                                        <View
+                                            android:layout_width="1dp"
+                                            android:layout_height="match_parent"
+                                            android:background="@android:color/black"/>
+
+                                        <TextView
+                                            android:layout_width="64.5dp"
+                                            android:layout_height="wrap_content"
+                                            android:text="Value"
+                                            android:layout_marginStart="5dp"
+                                            android:layout_marginEnd="5dp"
+                                            android:layout_gravity="center"
+                                            android:gravity="center"
+                                            android:textStyle="bold"
+                                            android:textColor="@color/on_primary"
+                                            android:textSize="12sp"
+                                            />
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/black"/>
+
+                                <LinearLayout
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Gen. Issue Return"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginEnd="5dp"
+                                        android:layout_gravity="center"
+                                        android:gravity="center"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/on_primary"
+                                        android:textSize="12sp"
+                                        />
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:background="@android:color/black"/>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+                                        <TextView
+                                            android:layout_width="64.5dp"
+                                            android:layout_height="wrap_content"
+                                            android:text="Qty"
+                                            android:layout_marginStart="5dp"
+                                            android:layout_marginEnd="5dp"
+                                            android:layout_gravity="center"
+                                            android:gravity="center"
+                                            android:textStyle="bold"
+                                            android:textColor="@color/on_primary"
+                                            android:textSize="12sp"
+                                            />
+                                        <View
+                                            android:layout_width="1dp"
+                                            android:layout_height="match_parent"
+                                            android:background="@android:color/black"/>
+
+                                        <TextView
+                                            android:layout_width="64.5dp"
+                                            android:layout_height="wrap_content"
+                                            android:text="Value"
+                                            android:layout_marginStart="5dp"
+                                            android:layout_marginEnd="5dp"
+                                            android:layout_gravity="center"
+                                            android:gravity="center"
+                                            android:textStyle="bold"
+                                            android:textColor="@color/on_primary"
+                                            android:textSize="12sp"
+                                            />
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/black"/>
+
+                                <LinearLayout
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Production Update"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginEnd="5dp"
+                                        android:layout_gravity="center"
+                                        android:gravity="center"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/on_primary"
+                                        android:textSize="12sp"
+                                        />
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:background="@android:color/black"/>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+                                        <TextView
+                                            android:layout_width="64.5dp"
+                                            android:layout_height="wrap_content"
+                                            android:text="Qty"
+                                            android:layout_marginStart="5dp"
+                                            android:layout_marginEnd="5dp"
+                                            android:layout_gravity="center"
+                                            android:gravity="center"
+                                            android:textStyle="bold"
+                                            android:textColor="@color/on_primary"
+                                            android:textSize="12sp"
+                                            />
+                                        <View
+                                            android:layout_width="1dp"
+                                            android:layout_height="match_parent"
+                                            android:background="@android:color/black"/>
+
+                                        <TextView
+                                            android:layout_width="64.5dp"
+                                            android:layout_height="wrap_content"
+                                            android:text="Value"
+                                            android:layout_marginStart="5dp"
+                                            android:layout_marginEnd="5dp"
+                                            android:layout_gravity="center"
+                                            android:gravity="center"
+                                            android:textStyle="bold"
+                                            android:textColor="@color/on_primary"
+                                            android:textSize="12sp"
+                                            />
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/black"/>
+
+                                <LinearLayout
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Transfer Issue(R)"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginEnd="5dp"
+                                        android:layout_gravity="center"
+                                        android:gravity="center"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/on_primary"
+                                        android:textSize="12sp"
+                                        />
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:background="@android:color/black"/>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+                                        <TextView
+                                            android:layout_width="64.5dp"
+                                            android:layout_height="wrap_content"
+                                            android:text="Qty"
+                                            android:layout_marginStart="5dp"
+                                            android:layout_marginEnd="5dp"
+                                            android:layout_gravity="center"
+                                            android:gravity="center"
+                                            android:textStyle="bold"
+                                            android:textColor="@color/on_primary"
+                                            android:textSize="12sp"
+                                            />
+                                        <View
+                                            android:layout_width="1dp"
+                                            android:layout_height="match_parent"
+                                            android:background="@android:color/black"/>
+
+                                        <TextView
+                                            android:layout_width="64.5dp"
+                                            android:layout_height="wrap_content"
+                                            android:text="Value"
+                                            android:layout_marginStart="5dp"
+                                            android:layout_marginEnd="5dp"
+                                            android:layout_gravity="center"
+                                            android:gravity="center"
+                                            android:textStyle="bold"
+                                            android:textColor="@color/on_primary"
+                                            android:textSize="12sp"
+                                            />
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/black"/>
+
+                                <LinearLayout
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Sales"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginEnd="5dp"
+                                        android:layout_gravity="center"
+                                        android:gravity="center"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/on_primary"
+                                        android:textSize="12sp"
+                                        />
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:background="@android:color/black"/>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+                                        <TextView
+                                            android:layout_width="64.5dp"
+                                            android:layout_height="wrap_content"
+                                            android:text="Qty"
+                                            android:layout_marginStart="5dp"
+                                            android:layout_marginEnd="5dp"
+                                            android:layout_gravity="center"
+                                            android:gravity="center"
+                                            android:textStyle="bold"
+                                            android:textColor="@color/on_primary"
+                                            android:textSize="12sp"
+                                            />
+                                        <View
+                                            android:layout_width="1dp"
+                                            android:layout_height="match_parent"
+                                            android:background="@android:color/black"/>
+
+                                        <TextView
+                                            android:layout_width="64.5dp"
+                                            android:layout_height="wrap_content"
+                                            android:text="Value"
+                                            android:layout_marginStart="5dp"
+                                            android:layout_marginEnd="5dp"
+                                            android:layout_gravity="center"
+                                            android:gravity="center"
+                                            android:textStyle="bold"
+                                            android:textColor="@color/on_primary"
+                                            android:textSize="12sp"
+                                            />
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/black"/>
+
+                                <LinearLayout
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Raw Issue"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginEnd="5dp"
+                                        android:layout_gravity="center"
+                                        android:gravity="center"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/on_primary"
+                                        android:textSize="12sp"
+                                        />
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:background="@android:color/black"/>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+                                        <TextView
+                                            android:layout_width="64.5dp"
+                                            android:layout_height="wrap_content"
+                                            android:text="Qty"
+                                            android:layout_marginStart="5dp"
+                                            android:layout_marginEnd="5dp"
+                                            android:layout_gravity="center"
+                                            android:gravity="center"
+                                            android:textStyle="bold"
+                                            android:textColor="@color/on_primary"
+                                            android:textSize="12sp"
+                                            />
+                                        <View
+                                            android:layout_width="1dp"
+                                            android:layout_height="match_parent"
+                                            android:background="@android:color/black"/>
+
+                                        <TextView
+                                            android:layout_width="64.5dp"
+                                            android:layout_height="wrap_content"
+                                            android:text="Value"
+                                            android:layout_marginStart="5dp"
+                                            android:layout_marginEnd="5dp"
+                                            android:layout_gravity="center"
+                                            android:gravity="center"
+                                            android:textStyle="bold"
+                                            android:textColor="@color/on_primary"
+                                            android:textSize="12sp"
+                                            />
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/black"/>
+
+                                <LinearLayout
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Purchase Return"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginEnd="5dp"
+                                        android:layout_gravity="center"
+                                        android:gravity="center"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/on_primary"
+                                        android:textSize="12sp"
+                                        />
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:background="@android:color/black"/>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+                                        <TextView
+                                            android:layout_width="64.5dp"
+                                            android:layout_height="wrap_content"
+                                            android:text="Qty"
+                                            android:layout_marginStart="5dp"
+                                            android:layout_marginEnd="5dp"
+                                            android:layout_gravity="center"
+                                            android:gravity="center"
+                                            android:textStyle="bold"
+                                            android:textColor="@color/on_primary"
+                                            android:textSize="12sp"
+                                            />
+                                        <View
+                                            android:layout_width="1dp"
+                                            android:layout_height="match_parent"
+                                            android:background="@android:color/black"/>
+
+                                        <TextView
+                                            android:layout_width="64.5dp"
+                                            android:layout_height="wrap_content"
+                                            android:text="Value"
+                                            android:layout_marginStart="5dp"
+                                            android:layout_marginEnd="5dp"
+                                            android:layout_gravity="center"
+                                            android:gravity="center"
+                                            android:textStyle="bold"
+                                            android:textColor="@color/on_primary"
+                                            android:textSize="12sp"
+                                            />
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/black"/>
+
+                                <LinearLayout
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Store Adjustment"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginEnd="5dp"
+                                        android:layout_gravity="center"
+                                        android:gravity="center"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/on_primary"
+                                        android:textSize="12sp"
+                                        />
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:background="@android:color/black"/>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+                                        <TextView
+                                            android:layout_width="64.5dp"
+                                            android:layout_height="wrap_content"
+                                            android:text="Qty"
+                                            android:layout_marginStart="5dp"
+                                            android:layout_marginEnd="5dp"
+                                            android:layout_gravity="center"
+                                            android:gravity="center"
+                                            android:textStyle="bold"
+                                            android:textColor="@color/on_primary"
+                                            android:textSize="12sp"
+                                            />
+                                        <View
+                                            android:layout_width="1dp"
+                                            android:layout_height="match_parent"
+                                            android:background="@android:color/black"/>
+
+                                        <TextView
+                                            android:layout_width="64.5dp"
+                                            android:layout_height="wrap_content"
+                                            android:text="Value"
+                                            android:layout_marginStart="5dp"
+                                            android:layout_marginEnd="5dp"
+                                            android:layout_gravity="center"
+                                            android:gravity="center"
+                                            android:textStyle="bold"
+                                            android:textColor="@color/on_primary"
+                                            android:textSize="12sp"
+                                            />
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/black"/>
+
+                                <LinearLayout
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Gen. Item Issue"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginEnd="5dp"
+                                        android:layout_gravity="center"
+                                        android:gravity="center"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/on_primary"
+                                        android:textSize="12sp"
+                                        />
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:background="@android:color/black"/>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+                                        <TextView
+                                            android:layout_width="64.5dp"
+                                            android:layout_height="wrap_content"
+                                            android:text="Qty"
+                                            android:layout_marginStart="5dp"
+                                            android:layout_marginEnd="5dp"
+                                            android:layout_gravity="center"
+                                            android:gravity="center"
+                                            android:textStyle="bold"
+                                            android:textColor="@color/on_primary"
+                                            android:textSize="12sp"
+                                            />
+                                        <View
+                                            android:layout_width="1dp"
+                                            android:layout_height="match_parent"
+                                            android:background="@android:color/black"/>
+
+                                        <TextView
+                                            android:layout_width="64.5dp"
+                                            android:layout_height="wrap_content"
+                                            android:text="Value"
+                                            android:layout_marginStart="5dp"
+                                            android:layout_marginEnd="5dp"
+                                            android:layout_gravity="center"
+                                            android:gravity="center"
+                                            android:textStyle="bold"
+                                            android:textColor="@color/on_primary"
+                                            android:textSize="12sp"
+                                            />
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/black"/>
+
+                                <LinearLayout
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Gen. Asset Disp."
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginEnd="5dp"
+                                        android:layout_gravity="center"
+                                        android:gravity="center"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/on_primary"
+                                        android:textSize="12sp"
+                                        />
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:background="@android:color/black"/>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+                                        <TextView
+                                            android:layout_width="64.5dp"
+                                            android:layout_height="wrap_content"
+                                            android:text="Qty"
+                                            android:layout_marginStart="5dp"
+                                            android:layout_marginEnd="5dp"
+                                            android:layout_gravity="center"
+                                            android:gravity="center"
+                                            android:textStyle="bold"
+                                            android:textColor="@color/on_primary"
+                                            android:textSize="12sp"
+                                            />
+                                        <View
+                                            android:layout_width="1dp"
+                                            android:layout_height="match_parent"
+                                            android:background="@android:color/black"/>
+
+                                        <TextView
+                                            android:layout_width="64.5dp"
+                                            android:layout_height="wrap_content"
+                                            android:text="Value"
+                                            android:layout_marginStart="5dp"
+                                            android:layout_marginEnd="5dp"
+                                            android:layout_gravity="center"
+                                            android:gravity="center"
+                                            android:textStyle="bold"
+                                            android:textColor="@color/on_primary"
+                                            android:textSize="12sp"
+                                            />
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/black"/>
+
+                                <LinearLayout
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Closing"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginEnd="5dp"
+                                        android:layout_gravity="center"
+                                        android:gravity="center"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/on_primary"
+                                        android:textSize="12sp"
+                                        />
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:background="@android:color/black"/>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+                                        <TextView
+                                            android:layout_width="64.5dp"
+                                            android:layout_height="wrap_content"
+                                            android:text="Qty"
+                                            android:layout_marginStart="5dp"
+                                            android:layout_marginEnd="5dp"
+                                            android:layout_gravity="center"
+                                            android:gravity="center"
+                                            android:textStyle="bold"
+                                            android:textColor="@color/on_primary"
+                                            android:textSize="12sp"
+                                            />
+                                        <View
+                                            android:layout_width="1dp"
+                                            android:layout_height="match_parent"
+                                            android:background="@android:color/black"/>
+
+                                        <TextView
+                                            android:layout_width="64.5dp"
+                                            android:layout_height="wrap_content"
+                                            android:text="Value"
+                                            android:layout_marginStart="5dp"
+                                            android:layout_marginEnd="5dp"
+                                            android:layout_gravity="center"
+                                            android:gravity="center"
+                                            android:textStyle="bold"
+                                            android:textColor="@color/on_primary"
+                                            android:textSize="12sp"
+                                            />
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/black"/>
+
+
+
+
+
+
+
+
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@android:color/black"/>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginEnd="5dp">
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/item_overview_relation_store_ledger"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scrollbars="vertical"
+                                    />
+                            </RelativeLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginEnd="5dp">
+
+                                <TextView
+                                    android:layout_width="385.5dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:gravity="start"
+                                    android:text="Total"
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold" />
+
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/black"/>
+
+                                <TextView
+                                    android:id="@+id/total_op_qty"
+                                    android:layout_width="64.5dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="Qty"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold"
+                                    android:textSize="12sp"
+                                    />
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/black"/>
+
+                                <TextView
+                                    android:id="@+id/total_op_val"
+                                    android:layout_width="64.5dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="Value"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:layout_gravity="center"
+                                    android:textColor="@color/black"
+                                    android:gravity="center"
+                                    android:textStyle="bold"
+                                    android:textSize="12sp"
+                                    />
+
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/black"/>
+
+
+                                <TextView
+                                    android:id="@+id/total_rcv_qty"
+                                    android:layout_width="64.5dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="Qty"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold"
+                                    android:textSize="12sp"
+                                    />
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/black"/>
+
+                                <TextView
+                                    android:id="@+id/total_rcv_val"
+                                    android:layout_width="64.5dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="Value"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:layout_gravity="center"
+                                    android:textColor="@color/black"
+                                    android:gravity="center"
+                                    android:textStyle="bold"
+                                    android:textSize="12sp"
+                                    />
+
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/black"/>
+
+                                <TextView
+                                    android:id="@+id/total_trans_rcv_qty"
+                                    android:layout_width="64.5dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="Qty"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold"
+                                    android:textSize="12sp"
+                                    />
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/black"/>
+
+                                <TextView
+                                    android:id="@+id/total_trans_rcv_val"
+                                    android:layout_width="64.5dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="Value"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:layout_gravity="center"
+                                    android:textColor="@color/black"
+                                    android:gravity="center"
+                                    android:textStyle="bold"
+                                    android:textSize="12sp"
+                                    />
+
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/black"/>
+
+                                <TextView
+                                    android:id="@+id/total_sales_rtn_qty"
+                                    android:layout_width="64.5dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="Qty"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold"
+                                    android:textSize="12sp"
+                                    />
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/black"/>
+
+                                <TextView
+                                    android:id="@+id/total_sales_rtn_val"
+                                    android:layout_width="64.5dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="Value"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:layout_gravity="center"
+                                    android:textColor="@color/black"
+                                    android:gravity="center"
+                                    android:textStyle="bold"
+                                    android:textSize="12sp"
+                                    />
+
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/black"/>
+
+                                <TextView
+                                    android:id="@+id/total_issue_rtn_qty"
+                                    android:layout_width="64.5dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="Qty"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold"
+                                    android:textSize="12sp"
+                                    />
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/black"/>
+
+                                <TextView
+                                    android:id="@+id/total_issue_rtn_val"
+                                    android:layout_width="64.5dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="Value"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:layout_gravity="center"
+                                    android:textColor="@color/black"
+                                    android:gravity="center"
+                                    android:textStyle="bold"
+                                    android:textSize="12sp"
+                                    />
+
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/black"/>
+
+                                <TextView
+                                    android:id="@+id/total_gen_issue_rtn_qty"
+                                    android:layout_width="64.5dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="Qty"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold"
+                                    android:textSize="12sp"
+                                    />
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/black"/>
+
+                                <TextView
+                                    android:id="@+id/total_gen_issue_rtn_val"
+                                    android:layout_width="64.5dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="Value"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:layout_gravity="center"
+                                    android:textColor="@color/black"
+                                    android:gravity="center"
+                                    android:textStyle="bold"
+                                    android:textSize="12sp"
+                                    />
+
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/black"/>
+
+                                <TextView
+                                    android:id="@+id/total_prod_upd_qty"
+                                    android:layout_width="64.5dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="Qty"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold"
+                                    android:textSize="12sp"
+                                    />
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/black"/>
+
+                                <TextView
+                                    android:id="@+id/total_prod_upd_val"
+                                    android:layout_width="64.5dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="Value"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:layout_gravity="center"
+                                    android:textColor="@color/black"
+                                    android:gravity="center"
+                                    android:textStyle="bold"
+                                    android:textSize="12sp"
+                                    />
+
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/black"/>
+
+                                <TextView
+                                    android:id="@+id/total_trans_issue_qty"
+                                    android:layout_width="64.5dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="Qty"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold"
+                                    android:textSize="12sp"
+                                    />
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/black"/>
+
+                                <TextView
+                                    android:id="@+id/total_trans_issue_val"
+                                    android:layout_width="64.5dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="Value"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:layout_gravity="center"
+                                    android:textColor="@color/black"
+                                    android:gravity="center"
+                                    android:textStyle="bold"
+                                    android:textSize="12sp"
+                                    />
+
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/black"/>
+
+                                <TextView
+                                    android:id="@+id/total_sales_qty"
+                                    android:layout_width="64.5dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="Qty"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold"
+                                    android:textSize="12sp"
+                                    />
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/black"/>
+
+                                <TextView
+                                    android:id="@+id/total_sales_val"
+                                    android:layout_width="64.5dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="Value"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:layout_gravity="center"
+                                    android:textColor="@color/black"
+                                    android:gravity="center"
+                                    android:textStyle="bold"
+                                    android:textSize="12sp"
+                                    />
+
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/black"/>
+
+                                <TextView
+                                    android:id="@+id/total_raw_issue_qty"
+                                    android:layout_width="64.5dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="Qty"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold"
+                                    android:textSize="12sp"
+                                    />
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/black"/>
+
+                                <TextView
+                                    android:id="@+id/total_raw_issue_val"
+                                    android:layout_width="64.5dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="Value"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:layout_gravity="center"
+                                    android:textColor="@color/black"
+                                    android:gravity="center"
+                                    android:textStyle="bold"
+                                    android:textSize="12sp"
+                                    />
+
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/black"/>
+
+                                <TextView
+                                    android:id="@+id/total_pur_rtn_qty"
+                                    android:layout_width="64.5dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="Qty"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold"
+                                    android:textSize="12sp"
+                                    />
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/black"/>
+
+                                <TextView
+                                    android:id="@+id/total_pur_rtn_val"
+                                    android:layout_width="64.5dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="Value"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:layout_gravity="center"
+                                    android:textColor="@color/black"
+                                    android:gravity="center"
+                                    android:textStyle="bold"
+                                    android:textSize="12sp"
+                                    />
+
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/black"/>
+
+                                <TextView
+                                    android:id="@+id/total_str_adj_qty"
+                                    android:layout_width="64.5dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="Qty"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold"
+                                    android:textSize="12sp"
+                                    />
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/black"/>
+
+                                <TextView
+                                    android:id="@+id/total_str_adj_val"
+                                    android:layout_width="64.5dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="Value"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:layout_gravity="center"
+                                    android:textColor="@color/black"
+                                    android:gravity="center"
+                                    android:textStyle="bold"
+                                    android:textSize="12sp"
+                                    />
+
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/black"/>
+
+                                <TextView
+                                    android:id="@+id/total_gen_item_issue_qty"
+                                    android:layout_width="64.5dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="Qty"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold"
+                                    android:textSize="12sp"
+                                    />
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/black"/>
+
+                                <TextView
+                                    android:id="@+id/total_gen_item_issue_val"
+                                    android:layout_width="64.5dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="Value"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:layout_gravity="center"
+                                    android:textColor="@color/black"
+                                    android:gravity="center"
+                                    android:textStyle="bold"
+                                    android:textSize="12sp"
+                                    />
+
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/black"/>
+
+                                <TextView
+                                    android:id="@+id/total_gen_asset_disp_qty"
+                                    android:layout_width="64.5dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="Qty"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold"
+                                    android:textSize="12sp"
+                                    />
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/black"/>
+
+                                <TextView
+                                    android:id="@+id/total_gen_asset_disp_val"
+                                    android:layout_width="64.5dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="Value"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:layout_gravity="center"
+                                    android:textColor="@color/black"
+                                    android:gravity="center"
+                                    android:textStyle="bold"
+                                    android:textSize="12sp"
+                                    />
+
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/black"/>
+
+                                <TextView
+                                    android:id="@+id/total_closing_qty"
+                                    android:layout_width="64.5dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="Qty"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold"
+                                    android:textSize="12sp"
+                                    />
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/black"/>
+
+                                <TextView
+                                    android:id="@+id/total_closing_val"
+                                    android:layout_width="64.5dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="Value"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:layout_gravity="center"
+                                    android:textColor="@color/black"
+                                    android:gravity="center"
+                                    android:textStyle="bold"
+                                    android:textSize="12sp"
+                                    />
+
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/black"/>
+
+
+
+
+
+
+
+
+                            </LinearLayout>
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@android:color/black"
+                                android:layout_marginBottom="5dp"/>
+
+                        </LinearLayout>
+
+                    </HorizontalScrollView>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+
+
+
+    </LinearLayout>
+
+</FrameLayout>

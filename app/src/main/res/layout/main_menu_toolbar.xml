@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/primary">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/terrain_logo"
+            android:layout_centerVertical="true"
+            android:src="@drawable/erp"/>
+
+        <TextView
+            android:id="@+id/thrm_app_name_main_menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="16dp"
+            android:layout_toEndOf="@+id/terrain_logo"
+            android:layout_toStartOf="@+id/log_out_icon_main_menu"
+            android:layout_marginEnd="5dp"
+            android:fontFamily="@font/russo_one"
+            android:text="Terrain ERP"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/log_out_icon_main_menu"
+            android:layout_toStartOf="@+id/nav_icon_main_menu"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/log_out_24"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/nav_icon_main_menu"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/menu_24"/>
+
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

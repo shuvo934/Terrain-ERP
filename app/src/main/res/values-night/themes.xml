@@ -1,0 +1,18 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.ICOMERP" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">#031A5F</item>
+        <item name="colorPrimaryVariant">#3F85C9</item>
+        <item name="colorOnPrimary">#3A9FEE</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">#031A5F</item>
+        <item name="colorSecondaryVariant">#3F85C9</item>
+        <item name="colorOnSecondary">#3A9FEE</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimary</item>
+        <item name="android:navigationBarColor">@color/back_color</item>
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+        <!-- Customize your theme here. -->
+    </style>
+</resources>

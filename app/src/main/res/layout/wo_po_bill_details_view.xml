@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/back_color"
+            android:padding="10dp">
+            <TextView
+                android:id="@+id/wo_po_no"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Work Order No:"
+                android:textSize="18sp"
+                android:textColor="@color/on_primary"
+                android:textStyle="bold"
+                android:fontFamily="@font/russo_one"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1">
+            <TextView
+                android:layout_weight=".5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Work Order Date: "
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_margin="5dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"/>
+
+            <TextView
+                android:id="@+id/wo_po_date"
+                android:layout_weight=".5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="21-Jan-21"
+                android:textStyle="bold"
+                android:layout_margin="5dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="(Work Order)"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="10dp"
+            android:weightSum="1.2">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:layout_weight=".6"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="@color/on_primary"
+                android:text="Item"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:layout_weight=".3"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/on_primary"
+                android:text="Quantity"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:layout_weight=".3"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/on_primary"
+                android:text="Rate"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:layout_marginStart="10dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/wo_po_item_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="5dp"/>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <TextView
+                android:layout_weight=".5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Work Order Amount: "
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_margin="5dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"/>
+
+            <TextView
+                android:id="@+id/wo_po_total_amount"
+                android:layout_weight=".5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="10011 BDT"
+                android:textStyle="bold"
+                android:layout_margin="5dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:background="@color/on_primary"/>
+
+        <TextView
+            android:id="@+id/no_rcv_msg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize = "16sp"
+            android:textColor="@color/black"
+            android:text="No Receive"
+            android:textStyle="bold"
+            android:gravity="center"/>
+
+
+        <LinearLayout
+            android:id="@+id/purchase_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="(Purchase Receive) "
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_margin="5dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="10dp"
+                android:weightSum="1.2">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:layout_weight=".6"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:textColor="@color/on_primary"
+                    android:text="Item"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:layout_weight=".3"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textColor="@color/on_primary"
+                    android:text="Quantity"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:layout_weight=".3"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textColor="@color/on_primary"
+                    android:text="Rate"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"
+                android:layout_marginStart="10dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/wo_po_rcv_item_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="5dp"/>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_weight=".5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Purchase Receive Amount: "
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_margin="5dp"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"/>
+
+                <TextView
+                    android:id="@+id/wo_po_rcv_total_amount"
+                    android:layout_weight=".5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="10011 BDT"
+                    android:textStyle="bold"
+                    android:layout_margin="5dp"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_weight=".5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Receivable Amount: "
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_margin="5dp"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"/>
+
+                <TextView
+                    android:id="@+id/wo_po_rcvable_total_amount"
+                    android:layout_weight=".5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="10011 BDT"
+                    android:textStyle="bold"
+                    android:layout_margin="5dp"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:background="@color/on_primary"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <TextView
+                android:layout_weight=".5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Bill Receive Amount: "
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_margin="5dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"/>
+
+            <TextView
+                android:id="@+id/wo_po_bill_total_amount"
+                android:layout_weight=".5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="10011 BDT"
+                android:textStyle="bold"
+                android:layout_margin="5dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <TextView
+                android:layout_weight=".5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Bill Balance Amount: "
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_margin="5dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"/>
+
+            <TextView
+                android:id="@+id/wo_po_bill_bal_total_amount"
+                android:layout_weight=".5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="10011 BDT"
+                android:textStyle="bold"
+                android:layout_margin="5dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"/>
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+</ScrollView>

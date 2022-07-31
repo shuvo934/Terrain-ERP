@@ -1,0 +1,1645 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/back_color"
+    tools:context=".fragments.RelationsFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/back_color"
+                app:cardElevation="2dp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:id="@+id/w_o_logo"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/relation_icon"
+                        app:tint="@color/on_primary" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="16dp"
+                        android:layout_toEndOf="@+id/w_o_logo"
+                        android:fontFamily="@font/russo_one"
+                        android:text="Procurement Relations"
+                        android:textColor="@color/on_primary"
+                        android:textSize="17sp" />
+
+
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="2.5dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="@color/white">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/on_primary">
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/spinner_layout_relation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="1dp"
+                        app:boxCornerRadiusTopStart="10dp"
+                        app:boxCornerRadiusTopEnd="10dp"
+                        app:boxCornerRadiusBottomEnd="10dp"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxBackgroundColor="@color/white"
+                        app:boxBackgroundMode="filled"
+                        app:endIconMode="dropdown_menu"
+                        app:boxStrokeWidth="0dp"
+                        android:hint="Relation Type"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                        >
+
+                        <com.rosemaryapp.amazingspinner.AmazingSpinner
+                            android:id="@+id/relation_type_spinner"
+                            style="@style/Widget.MaterialComponents.AutoCompleteTextView.FilledBox"
+                            android:layout_width="match_parent"
+                            android:text=""
+                            android:layout_height="wrap_content"
+                            />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <LinearLayout
+                android:id="@+id/after_relation_type_selecting"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="2.5dp"
+                        android:layout_marginTop="2.5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_weight=".5"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="2dp"
+                        app:cardBackgroundColor="@color/white">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/on_primary">
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="1dp"
+                                app:boxCornerRadiusTopStart="10dp"
+                                app:boxCornerRadiusTopEnd="10dp"
+                                app:boxCornerRadiusBottomEnd="10dp"
+                                app:boxCornerRadiusBottomStart="10dp"
+                                app:boxBackgroundColor="@color/white"
+                                app:boxBackgroundMode="filled"
+                                app:boxStrokeWidth="0dp"
+                                android:clickable="true"
+                                android:focusable="false"
+                                android:hint="Begin Date"
+                                app:startIconDrawable="@drawable/calendar_icon"
+                                app:startIconTintMode="screen"
+                                app:startIconTint="@android:color/transparent">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/begin_date_relation"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text=""
+                                    android:clickable="true"
+                                    android:focusable="false"
+                                    android:inputType="date"
+                                    android:imeOptions="actionDone"
+                                    android:textColor="@color/black"/>
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="2.5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginTop="2.5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_weight=".5"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="2dp"
+                        app:cardBackgroundColor="@color/white">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/on_primary">
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="1dp"
+                                app:boxCornerRadiusTopStart="10dp"
+                                app:boxCornerRadiusTopEnd="10dp"
+                                app:boxCornerRadiusBottomEnd="10dp"
+                                app:boxCornerRadiusBottomStart="10dp"
+                                app:boxBackgroundColor="@color/white"
+                                app:boxBackgroundMode="filled"
+                                app:boxStrokeWidth="0dp"
+                                android:hint="End Date"
+                                android:clickable="true"
+                                android:focusable="false"
+                                app:startIconDrawable="@drawable/calendar_icon"
+                                app:startIconTintMode="screen"
+                                app:startIconTint="@android:color/transparent">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/end_date_relations"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text=""
+                                    android:inputType="date"
+                                    android:clickable="true"
+                                    android:focusable="false"
+                                    android:imeOptions="actionDone"
+                                    android:textColor="@color/black"/>
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/date_range_msg_relations"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Date Range is Invalid"
+                    android:textColor="@android:color/holo_red_light"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    android:gravity="center"
+                    android:layout_marginBottom="5dp"/>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/wo_po_card_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
+                    app:cardCornerRadius="10dp"
+                    android:visibility="visible"
+                    app:cardElevation="2dp"
+                    app:cardBackgroundColor="@color/white">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/on_primary">
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/spinner_layout_wo_po_type"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            app:boxCornerRadiusTopStart="10dp"
+                            app:boxCornerRadiusTopEnd="10dp"
+                            app:boxCornerRadiusBottomEnd="10dp"
+                            app:boxCornerRadiusBottomStart="10dp"
+                            app:boxBackgroundColor="@color/white"
+                            app:boxBackgroundMode="filled"
+                            app:endIconMode="dropdown_menu"
+                            app:boxStrokeWidth="0dp"
+                            android:hint="WO/PO Type"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                            >
+
+                            <com.rosemaryapp.amazingspinner.AmazingSpinner
+                                android:id="@+id/wo_po_type_spinner"
+                                style="@style/Widget.MaterialComponents.AutoCompleteTextView.FilledBox"
+                                android:layout_width="match_parent"
+                                android:text=""
+                                android:layout_height="wrap_content"
+                                />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="2dp"
+                    app:cardBackgroundColor="@color/white">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/on_primary">
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/select_supplier_layout_relations"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            app:boxCornerRadiusTopStart="10dp"
+                            app:boxCornerRadiusTopEnd="10dp"
+                            app:boxCornerRadiusBottomEnd="10dp"
+                            app:boxCornerRadiusBottomStart="10dp"
+                            app:boxBackgroundColor="@color/white"
+                            app:boxBackgroundMode="filled"
+                            app:boxStrokeWidth="0dp"
+                            android:clickable="true"
+                            android:focusable="false"
+                            android:hint="Select Supplier">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/select_supplier_relations"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                android:inputType="text"
+                                android:clickable="true"
+                                android:focusable="false"
+                                android:imeOptions="actionDone"
+                                android:textColor="@color/black"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
+                    app:cardCornerRadius="10dp"
+                    android:visibility="gone"
+                    app:cardElevation="2dp"
+                    app:cardBackgroundColor="@color/white">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/on_primary">
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/select_customer_layout_relations"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            app:boxCornerRadiusTopStart="10dp"
+                            app:boxCornerRadiusTopEnd="10dp"
+                            app:boxCornerRadiusBottomEnd="10dp"
+                            app:boxCornerRadiusBottomStart="10dp"
+                            app:boxBackgroundColor="@color/white"
+                            app:boxBackgroundMode="filled"
+                            app:boxStrokeWidth="0dp"
+                            android:clickable="true"
+                            android:focusable="false"
+                            android:hint="Select Customer">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/select_customer_relations"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                android:inputType="text"
+                                android:clickable="true"
+                                android:focusable="false"
+                                android:imeOptions="actionDone"
+                                android:textColor="@color/black"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+
+                <LinearLayout
+                    android:id="@+id/after_selecting_wo_po"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/card_of_wo_po_rcv_relation"
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        app:cardElevation="2dp"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="10dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+                            <TextView
+                                android:id="@+id/category_selected_msg_relations"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Category View (Select Category from Chart)"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:textStyle="bold"
+                                android:fontFamily="@font/roboto_medium" />
+
+                            <com.github.mikephil.charting.charts.BarChart
+                                android:id="@+id/relation_category_overview"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginStart="2dp"
+                                android:layout_marginEnd="2dp"
+                                />
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/card_of_wo_po_bill_relation"
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        app:cardElevation="2dp"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="10dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Relations Overview"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:textStyle="bold"
+                                android:fontFamily="@font/roboto_medium" />
+
+                            <com.github.mikephil.charting.charts.PieChart
+                                android:id="@+id/wo_po_bill_rcv_overview"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginStart="2dp"
+                                android:layout_marginEnd="2dp"
+                                />
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/wo_po_amnt_card"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="2.5dp"
+                            android:layout_weight=".5"
+                            android:layout_marginBottom="5dp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="2dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:layout_gravity="center"
+                                android:baselineAligned="false">
+                                <RelativeLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp">
+                                    <ImageView
+                                        android:id="@+id/w_o_rela_circle"
+                                        android:layout_width="30dp"
+                                        android:layout_height="30dp"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_centerVertical="true"
+                                        android:background="@drawable/circle_shape"/>
+                                    <ImageView
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:layout_centerVertical="true"
+                                        android:layout_centerHorizontal="true"
+                                        android:src="@drawable/dollar_icon"/>
+                                </RelativeLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginTop="2dp"
+                                    android:layout_marginBottom="2dp"
+                                    android:layout_marginEnd="2dp"
+                                    >
+                                    <TextView
+                                        android:id="@+id/order_name_change"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Work Order"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginBottom="2dp"
+                                        android:textColor="@android:color/darker_gray"
+                                        android:textStyle="bold"/>
+
+                                    <TextView
+                                        android:id="@+id/work_order_relation_value"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/roboto_medium"
+                                        android:text="0 BDT"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginTop="2dp"
+                                        android:textColor="@color/black"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/purchase_receive_card"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:layout_marginStart="2.5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:layout_weight=".5"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="2dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:layout_gravity="center"
+                                android:baselineAligned="false">
+                                <RelativeLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp">
+                                    <ImageView
+                                        android:id="@+id/receive_relation_circle"
+                                        android:layout_width="30dp"
+                                        android:layout_height="30dp"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_centerVertical="true"
+                                        android:background="@drawable/circle_shape"/>
+                                    <ImageView
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:layout_centerVertical="true"
+                                        android:layout_centerHorizontal="true"
+                                        android:src="@drawable/dollar_icon"/>
+                                </RelativeLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginTop="2dp"
+                                    android:layout_marginBottom="2dp"
+                                    android:layout_marginEnd="2dp"
+                                    >
+                                    <TextView
+                                        android:id="@+id/receive_name_change"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Receive"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginBottom="2dp"
+                                        android:textColor="@android:color/darker_gray"
+                                        android:textStyle="bold"/>
+
+                                    <TextView
+                                        android:id="@+id/receive_relation_value"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/roboto_medium"
+                                        android:text="0 BDT"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginTop="2dp"
+                                        android:textColor="@color/black"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/mr_receive_card"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="2.5dp"
+                            android:layout_weight=".5"
+                            android:layout_marginBottom="5dp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="2dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:layout_gravity="center"
+                                android:baselineAligned="false">
+                                <RelativeLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp">
+                                    <ImageView
+                                        android:id="@+id/mr_receive_circle"
+                                        android:layout_width="30dp"
+                                        android:layout_height="30dp"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_centerVertical="true"
+                                        android:background="@drawable/circle_shape"/>
+                                    <ImageView
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:layout_centerVertical="true"
+                                        android:layout_centerHorizontal="true"
+                                        android:src="@drawable/dollar_icon"/>
+                                </RelativeLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginTop="2dp"
+                                    android:layout_marginBottom="2dp"
+                                    android:layout_marginEnd="2dp"
+                                    >
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Bill Receive"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginBottom="2dp"
+                                        android:textColor="@android:color/darker_gray"
+                                        android:textStyle="bold"/>
+
+                                    <TextView
+                                        android:id="@+id/mr_receive_value"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/roboto_medium"
+                                        android:text="0 BDT"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginTop="2dp"
+                                        android:textColor="@color/black"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/balance_card"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:layout_marginStart="2.5dp"
+                            android:layout_marginEnd="5dp"
+                            android:visibility="visible"
+                            android:layout_marginBottom="5dp"
+                            android:layout_weight=".5"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="2dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:layout_gravity="center"
+                                android:baselineAligned="false">
+                                <RelativeLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp">
+                                    <ImageView
+                                        android:id="@+id/balance_wo_po_circle"
+                                        android:layout_width="30dp"
+                                        android:layout_height="30dp"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_centerVertical="true"
+                                        android:background="@drawable/circle_shape"/>
+                                    <ImageView
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:layout_centerVertical="true"
+                                        android:layout_centerHorizontal="true"
+                                        android:src="@drawable/dollar_icon"/>
+                                </RelativeLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginTop="2dp"
+                                    android:layout_marginBottom="2dp"
+                                    android:layout_marginEnd="2dp"
+                                    >
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Bill Receive Balance"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginBottom="2dp"
+                                        android:textColor="@android:color/darker_gray"
+                                        android:textStyle="bold"/>
+
+                                    <TextView
+                                        android:id="@+id/balance_po_wo_value"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/roboto_medium"
+                                        android:text="0 BDT"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginTop="2dp"
+                                        android:textColor="@color/black"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/mr_total_vat_card"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="2.5dp"
+                            android:layout_weight=".5"
+                            android:layout_marginBottom="5dp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="2dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:layout_gravity="center"
+                                android:baselineAligned="false">
+                                <RelativeLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp">
+                                    <ImageView
+                                        android:id="@+id/mr_total_vat_circle"
+                                        android:layout_width="30dp"
+                                        android:layout_height="30dp"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_centerVertical="true"
+                                        android:background="@drawable/circle_shape"/>
+                                    <ImageView
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:layout_centerVertical="true"
+                                        android:layout_centerHorizontal="true"
+                                        android:src="@drawable/dollar_icon"/>
+                                </RelativeLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginTop="2dp"
+                                    android:layout_marginBottom="2dp"
+                                    android:layout_marginEnd="2dp"
+                                    >
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Total VAT"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginBottom="2dp"
+                                        android:textColor="@android:color/darker_gray"
+                                        android:textStyle="bold"/>
+
+                                    <TextView
+                                        android:id="@+id/mr_total_vat"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/roboto_medium"
+                                        android:text="0 BDT"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginTop="2dp"
+                                        android:textColor="@color/black"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/mr_total_bill_card"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:layout_marginStart="2.5dp"
+                            android:layout_marginEnd="5dp"
+                            android:visibility="visible"
+                            android:layout_marginBottom="5dp"
+                            android:layout_weight=".5"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="2dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:layout_gravity="center"
+                                android:baselineAligned="false">
+                                <RelativeLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp">
+                                    <ImageView
+                                        android:id="@+id/mr_total_bill_circle"
+                                        android:layout_width="30dp"
+                                        android:layout_height="30dp"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_centerVertical="true"
+                                        android:background="@drawable/circle_shape"/>
+                                    <ImageView
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:layout_centerVertical="true"
+                                        android:layout_centerHorizontal="true"
+                                        android:src="@drawable/dollar_icon"/>
+                                </RelativeLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginTop="2dp"
+                                    android:layout_marginBottom="2dp"
+                                    android:layout_marginEnd="2dp"
+                                    >
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Total Bill (+VAT)"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginBottom="2dp"
+                                        android:textColor="@android:color/darker_gray"
+                                        android:textStyle="bold"/>
+
+                                    <TextView
+                                        android:id="@+id/mr_total_bill"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/roboto_medium"
+                                        android:text="0 BDT"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginTop="2dp"
+                                        android:textColor="@color/black"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/mr_bill_paid_card"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="2.5dp"
+                            android:layout_weight=".5"
+                            android:layout_marginBottom="5dp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="2dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:layout_gravity="center"
+                                android:baselineAligned="false">
+                                <RelativeLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp">
+                                    <ImageView
+                                        android:id="@+id/mr_bill_paid_circle"
+                                        android:layout_width="30dp"
+                                        android:layout_height="30dp"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_centerVertical="true"
+                                        android:background="@drawable/circle_shape"/>
+                                    <ImageView
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:layout_centerVertical="true"
+                                        android:layout_centerHorizontal="true"
+                                        android:src="@drawable/dollar_icon"/>
+                                </RelativeLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginTop="2dp"
+                                    android:layout_marginBottom="2dp"
+                                    android:layout_marginEnd="2dp"
+                                    >
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Bill Paid (+VAT)"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginBottom="2dp"
+                                        android:textColor="@android:color/darker_gray"
+                                        android:textStyle="bold"/>
+
+                                    <TextView
+                                        android:id="@+id/mr_bill_paid"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/roboto_medium"
+                                        android:text="0 BDT"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginTop="2dp"
+                                        android:textColor="@color/black"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/bill_payable_card"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:layout_marginStart="2.5dp"
+                            android:layout_marginEnd="5dp"
+                            android:visibility="visible"
+                            android:layout_marginBottom="5dp"
+                            android:layout_weight=".5"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="2dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:layout_gravity="center"
+                                android:baselineAligned="false">
+                                <RelativeLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp">
+                                    <ImageView
+                                        android:id="@+id/bill_payable_circle"
+                                        android:layout_width="30dp"
+                                        android:layout_height="30dp"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_centerVertical="true"
+                                        android:background="@drawable/circle_shape"/>
+                                    <ImageView
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:layout_centerVertical="true"
+                                        android:layout_centerHorizontal="true"
+                                        android:src="@drawable/dollar_icon"/>
+                                </RelativeLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginTop="2dp"
+                                    android:layout_marginBottom="2dp"
+                                    android:layout_marginEnd="2dp"
+                                    >
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Bill Payable (+VAT)"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginBottom="2dp"
+                                        android:textColor="@android:color/darker_gray"
+                                        android:textStyle="bold"/>
+
+                                    <TextView
+                                        android:id="@+id/bill_payable"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/roboto_medium"
+                                        android:text="0 BDT"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginTop="2dp"
+                                        android:textColor="@color/black"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+
+                        </androidx.cardview.widget.CardView>
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/after_selecting_category_relation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/selected_cat_name_w_r_relation"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Fluids"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/roboto_medium"
+                            android:textSize="18sp"
+                            android:textColor="@color/primary"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="0dp"
+                                android:layout_height="100dp"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginEnd="2.5dp"
+                                android:layout_weight=".5"
+                                android:layout_marginBottom="5dp"
+                                app:cardBackgroundColor="@color/white"
+                                app:cardCornerRadius="10dp"
+                                app:cardElevation="2dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:gravity="center_vertical"
+                                    android:layout_gravity="center"
+                                    android:baselineAligned="false">
+                                    <RelativeLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp">
+                                        <ImageView
+                                            android:id="@+id/w_o_rela_circle_cate"
+                                            android:layout_width="30dp"
+                                            android:layout_height="30dp"
+                                            android:layout_centerHorizontal="true"
+                                            android:layout_centerVertical="true"
+                                            android:background="@drawable/circle_shape"/>
+                                        <ImageView
+                                            android:layout_width="20dp"
+                                            android:layout_height="20dp"
+                                            android:layout_centerVertical="true"
+                                            android:layout_centerHorizontal="true"
+                                            android:src="@drawable/dollar_icon"/>
+                                    </RelativeLayout>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical"
+                                        android:layout_marginStart="8dp"
+                                        android:layout_marginTop="2dp"
+                                        android:layout_marginBottom="2dp"
+                                        android:layout_marginEnd="2dp"
+                                        >
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="WO/PO"
+                                            android:layout_marginStart="5dp"
+                                            android:layout_marginBottom="2dp"
+                                            android:textColor="@android:color/darker_gray"
+                                            android:textStyle="bold"/>
+
+                                        <TextView
+                                            android:id="@+id/work_order_relation_value_cate"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_medium"
+                                            android:text="0 BDT"
+                                            android:layout_marginStart="5dp"
+                                            android:layout_marginTop="2dp"
+                                            android:textColor="@color/black"
+                                            android:textSize="16sp"
+                                            android:textStyle="bold" />
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                            </androidx.cardview.widget.CardView>
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="0dp"
+                                android:layout_height="100dp"
+                                android:layout_marginStart="2.5dp"
+                                android:layout_marginEnd="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:layout_weight=".5"
+                                app:cardBackgroundColor="@color/white"
+                                app:cardCornerRadius="10dp"
+                                app:cardElevation="2dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:gravity="center_vertical"
+                                    android:layout_gravity="center"
+                                    android:baselineAligned="false">
+                                    <RelativeLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp">
+                                        <ImageView
+                                            android:id="@+id/receive_relation_circle_cate"
+                                            android:layout_width="30dp"
+                                            android:layout_height="30dp"
+                                            android:layout_centerHorizontal="true"
+                                            android:layout_centerVertical="true"
+                                            android:background="@drawable/circle_shape"/>
+                                        <ImageView
+                                            android:layout_width="20dp"
+                                            android:layout_height="20dp"
+                                            android:layout_centerVertical="true"
+                                            android:layout_centerHorizontal="true"
+                                            android:src="@drawable/dollar_icon"/>
+                                    </RelativeLayout>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical"
+                                        android:layout_marginStart="8dp"
+                                        android:layout_marginTop="2dp"
+                                        android:layout_marginBottom="2dp"
+                                        android:layout_marginEnd="2dp"
+                                        >
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Receive"
+                                            android:layout_marginStart="5dp"
+                                            android:layout_marginBottom="2dp"
+                                            android:textColor="@android:color/darker_gray"
+                                            android:textStyle="bold"/>
+
+                                        <TextView
+                                            android:id="@+id/receive_relation_value_cate"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_medium"
+                                            android:text="0 BDT"
+                                            android:layout_marginStart="5dp"
+                                            android:layout_marginTop="2dp"
+                                            android:textColor="@color/black"
+                                            android:textSize="16sp"
+                                            android:textStyle="bold" />
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+
+                            </androidx.cardview.widget.CardView>
+
+                        </LinearLayout>
+
+
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="300dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
+                            app:cardElevation="2dp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="10dp">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:id="@+id/sub_category_selected_msg_relations"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Category View (Select Category from Chart)"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:textStyle="bold"
+                                    android:fontFamily="@font/roboto_medium" />
+
+                                <com.github.mikephil.charting.charts.BarChart
+                                    android:id="@+id/relation_sub_category_overview"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginBottom="5dp"
+                                    android:layout_marginStart="2dp"
+                                    android:layout_marginEnd="2dp"
+                                    />
+
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <LinearLayout
+                            android:id="@+id/after_selecting_category_for_item"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/selected_all_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="All Categories"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginEnd="5dp"
+                                android:textStyle="bold"
+                                android:fontFamily="@font/roboto_medium"
+                                android:textSize="18sp"
+                                android:textColor="@color/primary"/>
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginEnd="5dp"
+                                android:layout_marginBottom="5dp"
+                                app:cardElevation="2dp"
+                                app:cardBackgroundColor="@color/white"
+                                app:cardCornerRadius="10dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <com.google.android.material.textfield.TextInputLayout
+                                        android:id="@+id/search_item_name_lay"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginTop="5dp"
+                                        android:layout_marginEnd="5dp"
+                                        android:hint="Search Item"
+                                        app:boxBackgroundColor="#f1f2f6"
+                                        app:boxCornerRadiusTopEnd="10dp"
+                                        app:startIconDrawable="@drawable/search_24"
+                                        app:startIconTint="@color/white"
+                                        app:boxCornerRadiusTopStart="10dp"
+                                        app:boxCornerRadiusBottomStart="10dp"
+                                        app:boxCornerRadiusBottomEnd="10dp"
+                                        app:boxStrokeWidthFocused="1dp"
+                                        app:boxStrokeWidth="1dp"
+                                        app:helperText=""
+                                        app:boxStrokeColor="@color/on_primary"
+                                        app:helperTextEnabled="true"
+                                        android:textColorHint="#b2bef2"
+                                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                                        <com.google.android.material.textfield.TextInputEditText
+                                            android:id="@+id/search_item_name"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:ems="10"
+                                            android:imeOptions="actionSearch"
+                                            android:inputType="text"
+                                            android:textColor="#636e72"
+                                            android:textStyle="bold" />
+
+                                    </com.google.android.material.textfield.TextInputLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginEnd="5dp"
+                                        android:layout_marginTop="5dp"
+                                        android:weightSum="1.2">
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:text="Item Name"
+                                            android:gravity="center"
+                                            android:textSize="12sp"
+                                            android:textStyle="bold"
+                                            android:textColor="@color/on_primary"
+                                            android:layout_weight=".3"/>
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:text="Work Order (BDT)"
+                                            android:gravity="center"
+                                            android:textSize="12sp"
+                                            android:textStyle="bold"
+                                            android:textColor="@color/on_primary"
+                                            android:layout_weight=".3"/>
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:text="Receive (BDT)"
+                                            android:gravity="center"
+                                            android:textStyle="bold"
+                                            android:textColor="@color/on_primary"
+                                            android:textSize="12sp"
+                                            android:layout_weight=".3"/>
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:text="Receivable (BDT)"
+                                            android:gravity="center"
+                                            android:textStyle="bold"
+                                            android:textColor="@color/on_primary"
+                                            android:textSize="12sp"
+                                            android:layout_weight=".3"/>
+
+                                    </LinearLayout>
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:background="@android:color/darker_gray"/>
+
+                                    <TextView
+                                        android:id="@+id/no_item_msg"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="No Item Found"
+                                        android:textColor="@color/black"
+                                        android:visibility="gone"
+                                        android:gravity="center"
+                                        android:layout_marginTop="5dp"/>
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <androidx.recyclerview.widget.RecyclerView
+                                            android:id="@+id/item_overview_relation"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_margin="5dp"/>
+                                    </RelativeLayout>
+
+
+
+                                </LinearLayout>
+
+
+
+
+
+                            </androidx.cardview.widget.CardView>
+
+                        </LinearLayout>
+
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/after_selecting_wo_po_relation_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="WO/PO List"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/roboto_medium"
+                            android:textSize="18sp"
+                            android:textColor="@color/primary"/>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
+                            app:cardElevation="2dp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="10dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:id="@+id/search_wo_no_lay"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:hint="Search WO/PO No"
+                                    app:boxBackgroundColor="#f1f2f6"
+                                    app:boxCornerRadiusTopEnd="10dp"
+                                    app:startIconDrawable="@drawable/search_24"
+                                    app:startIconTint="@color/white"
+                                    app:boxCornerRadiusTopStart="10dp"
+                                    app:boxCornerRadiusBottomStart="10dp"
+                                    app:boxCornerRadiusBottomEnd="10dp"
+                                    app:boxStrokeWidthFocused="1dp"
+                                    app:boxStrokeWidth="1dp"
+                                    app:helperText=""
+                                    app:boxStrokeColor="@color/on_primary"
+                                    app:helperTextEnabled="true"
+                                    android:textColorHint="#b2bef2"
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/search_wo_no"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:ems="10"
+                                        android:imeOptions="actionSearch"
+                                        android:inputType="text"
+                                        android:textColor="#636e72"
+                                        android:textStyle="bold" />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <HorizontalScrollView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:scrollbars="horizontal">
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+
+                                        <LinearLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal"
+                                            android:layout_marginStart="5dp"
+                                            android:layout_marginEnd="5dp"
+                                            android:gravity="center"
+                                            android:layout_gravity="center"
+                                            android:layout_marginTop="5dp"
+                                           >
+
+                                            <TextView
+                                                android:layout_width="100dp"
+                                                android:layout_height="wrap_content"
+                                                android:text="WO/PO No"
+                                                android:gravity="center"
+                                                android:textSize="12sp"
+                                                android:textStyle="bold"
+                                                android:layout_marginStart="2dp"
+                                                android:layout_marginEnd="2dp"
+                                                android:textColor="@color/on_primary" />
+                                            <TextView
+                                                android:layout_width="90dp"
+                                                android:layout_height="wrap_content"
+                                                android:text="WO/PO (BDT)"
+                                                android:gravity="center"
+                                                android:layout_marginStart="2dp"
+                                                android:layout_marginEnd="2dp"
+                                                android:textSize="12sp"
+                                                android:textStyle="bold"
+                                                android:textColor="@color/on_primary" />
+                                            <TextView
+                                                android:layout_width="90dp"
+                                                android:layout_height="wrap_content"
+                                                android:text="Receive (BDT)"
+                                                android:gravity="center"
+                                                android:textStyle="bold"
+                                                android:layout_marginStart="2dp"
+                                                android:layout_marginEnd="2dp"
+                                                android:textColor="@color/on_primary"
+                                                android:textSize="12sp" />
+                                            <TextView
+                                                android:layout_width="90dp"
+                                                android:layout_height="wrap_content"
+                                                android:text="Bill Receive (BDT)"
+                                                android:gravity="center"
+                                                android:layout_marginStart="2dp"
+                                                android:layout_marginEnd="2dp"
+                                                android:textStyle="bold"
+                                                android:textColor="@color/on_primary"
+                                                android:textSize="12sp" />
+                                            <TextView
+                                                android:layout_width="90dp"
+                                                android:layout_height="wrap_content"
+                                                android:text="VAT (BDT)"
+                                                android:gravity="center"
+                                                android:layout_marginStart="2dp"
+                                                android:layout_marginEnd="2dp"
+                                                android:textStyle="bold"
+                                                android:textColor="@color/on_primary"
+                                                android:textSize="12sp" />
+                                            <TextView
+                                                android:layout_width="90dp"
+                                                android:layout_height="wrap_content"
+                                                android:text="Total Bill (BDT)"
+                                                android:gravity="center"
+                                                android:layout_marginStart="2dp"
+                                                android:layout_marginEnd="2dp"
+                                                android:textStyle="bold"
+                                                android:textColor="@color/on_primary"
+                                                android:textSize="12sp" />
+                                            <TextView
+                                                android:layout_width="90dp"
+                                                android:layout_height="wrap_content"
+                                                android:text="Bill Paid (BDT)"
+                                                android:gravity="center"
+                                                android:layout_marginStart="2dp"
+                                                android:layout_marginEnd="2dp"
+                                                android:textStyle="bold"
+                                                android:textColor="@color/on_primary"
+                                                android:textSize="12sp" />
+                                            <TextView
+                                                android:layout_width="90dp"
+                                                android:layout_height="wrap_content"
+                                                android:text="Bill Payable (BDT)"
+                                                android:gravity="center"
+                                                android:layout_marginStart="2dp"
+                                                android:layout_marginEnd="2dp"
+                                                android:textStyle="bold"
+                                                android:textColor="@color/on_primary"
+                                                android:textSize="12sp" />
+
+                                        </LinearLayout>
+
+                                        <View
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"
+                                            android:background="@android:color/darker_gray"/>
+
+                                        <TextView
+                                            android:id="@+id/no_wo_po_msg"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="No WO/PO Found"
+                                            android:textColor="@color/black"
+                                            android:visibility="gone"
+                                            android:gravity="center"
+                                            android:layout_marginTop="5dp"/>
+
+                                        <RelativeLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content">
+
+                                            <androidx.recyclerview.widget.RecyclerView
+                                                android:id="@+id/wo_po_overview_relation"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:layout_margin="5dp"/>
+                                        </RelativeLayout>
+
+                                    </LinearLayout>
+                                </HorizontalScrollView>
+
+
+
+
+                            </LinearLayout>
+
+
+
+
+
+                        </androidx.cardview.widget.CardView>
+
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

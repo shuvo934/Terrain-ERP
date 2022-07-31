@@ -1,0 +1,716 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:background="@color/back_color">
+
+
+
+    <TextView
+        android:id="@+id/sl_no_store_ledger"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:gravity="center"
+        android:text="SL NO"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/item_name_store_ledger"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Item Name"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        />
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"/>
+    <TextView
+        android:id="@+id/item_code_store_ledger"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:text="Item Code"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        />
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/hs_code_store_ledger"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:text="HS Code"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_marginStart="5dp"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:layout_marginEnd="5dp"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        />
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"/>
+    <TextView
+        android:id="@+id/unit_store_ledger"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:text="Unit"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        />
+
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/opening_qty"
+        android:layout_width="64.5dp"
+        android:layout_height="wrap_content"
+        android:text="Qty"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        />
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/opening_val"
+        android:layout_width="64.5dp"
+        android:layout_height="wrap_content"
+        android:text="Value"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_gravity="center"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        />
+
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/rcv_qty"
+        android:layout_width="64.5dp"
+        android:layout_height="wrap_content"
+        android:text="Qty"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_gravity="center"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        />
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/rcv_val"
+        android:layout_width="64.5dp"
+        android:layout_height="wrap_content"
+        android:text="Value"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:textSize="12sp"
+        />
+
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"/>
+
+
+    <TextView
+        android:id="@+id/transfer_rcv_qty"
+        android:layout_width="64.5dp"
+        android:layout_height="wrap_content"
+        android:text="Qty"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        />
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/transfer_rcv_val"
+        android:layout_width="64.5dp"
+        android:layout_height="wrap_content"
+        android:text="Value"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        />
+
+
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/sales_rtn_qty"
+        android:layout_width="64.5dp"
+        android:layout_height="wrap_content"
+        android:text="Qty"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_gravity="center"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        />
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/sales_rtn_val"
+        android:layout_width="64.5dp"
+        android:layout_height="wrap_content"
+        android:text="Value"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        />
+
+
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/issue_rtn_qty"
+        android:layout_width="64.5dp"
+        android:layout_height="wrap_content"
+        android:text="Qty"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        />
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/issue_rtn_val"
+        android:layout_width="64.5dp"
+        android:layout_height="wrap_content"
+        android:text="Value"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        />
+
+
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"/>
+
+
+    <TextView
+        android:id="@+id/gen_iss_rtn_qty"
+        android:layout_width="64.5dp"
+        android:layout_height="wrap_content"
+        android:text="Qty"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        />
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/gen_iss_rtn_val"
+        android:layout_width="64.5dp"
+        android:layout_height="wrap_content"
+        android:text="Value"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        />
+
+
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"/>
+
+
+    <TextView
+        android:id="@+id/pro_upd_qty"
+        android:layout_width="64.5dp"
+        android:layout_height="wrap_content"
+        android:text="Qty"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        />
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/pro_upd_val"
+        android:layout_width="64.5dp"
+        android:layout_height="wrap_content"
+        android:text="Value"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        />
+
+
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"/>
+
+
+    <TextView
+        android:id="@+id/transfer_issue_qty"
+        android:layout_width="64.5dp"
+        android:layout_height="wrap_content"
+        android:text="Qty"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        />
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/transfer_issue_val"
+        android:layout_width="64.5dp"
+        android:layout_height="wrap_content"
+        android:text="Value"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        />
+
+
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"/>
+
+
+    <TextView
+        android:id="@+id/sales_qty"
+        android:layout_width="64.5dp"
+        android:layout_height="wrap_content"
+        android:text="Qty"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        />
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/sales_val"
+        android:layout_width="64.5dp"
+        android:layout_height="wrap_content"
+        android:text="Value"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        />
+
+
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"/>
+
+
+    <TextView
+        android:id="@+id/raw_issue_qty"
+        android:layout_width="64.5dp"
+        android:layout_height="wrap_content"
+        android:text="Qty"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        />
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/raw_issue_val"
+        android:layout_width="64.5dp"
+        android:layout_height="wrap_content"
+        android:text="Value"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        />
+
+
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"/>
+
+
+    <TextView
+        android:id="@+id/pur_rtn_qty"
+        android:layout_width="64.5dp"
+        android:layout_height="wrap_content"
+        android:text="Qty"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        />
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/pur_rtn_val"
+        android:layout_width="64.5dp"
+        android:layout_height="wrap_content"
+        android:text="Value"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        />
+
+
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/store_adj_qty"
+        android:layout_width="64.5dp"
+        android:layout_height="wrap_content"
+        android:text="Qty"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        />
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/store_adj_val"
+        android:layout_width="64.5dp"
+        android:layout_height="wrap_content"
+        android:text="Value"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        />
+
+
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"/>
+
+
+    <TextView
+        android:id="@+id/gen_item_issue_qty"
+        android:layout_width="64.5dp"
+        android:layout_height="wrap_content"
+        android:text="Qty"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        />
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/gen_item_issue_val"
+        android:layout_width="64.5dp"
+        android:layout_height="wrap_content"
+        android:text="Value"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        />
+
+
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"/>
+
+
+    <TextView
+        android:id="@+id/gen_asset_qty"
+        android:layout_width="64.5dp"
+        android:layout_height="wrap_content"
+        android:text="Qty"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        />
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/gen_asset_val"
+        android:layout_width="64.5dp"
+        android:layout_height="wrap_content"
+        android:text="Value"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        />
+
+
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"/>
+
+
+    <TextView
+        android:id="@+id/closing_qty"
+        android:layout_width="64.5dp"
+        android:layout_height="wrap_content"
+        android:text="Qty"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        />
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/closing_val"
+        android:layout_width="64.5dp"
+        android:layout_height="wrap_content"
+        android:text="Value"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        />
+
+
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"/>
+
+
+
+
+</LinearLayout>

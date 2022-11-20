@@ -979,8 +979,10 @@ public class ReceiveFragment extends Fragment {
 
                 NoOfEmp = new ArrayList<>();
                 for (int i = 0 ; i < categoryValues.size(); i++) {
-                    if (!categoryValues.get(i).getValue().equals("0")) {
-                        NoOfEmp.add(new PieEntry(Float.parseFloat(categoryValues.get(i).getValue()),categoryValues.get(i).getType(),categoryValues.get(i).getId()));
+                    if (categoryValues.get(i).getValue() != null) {
+                        if (!categoryValues.get(i).getValue().equals("0")) {
+                            NoOfEmp.add(new PieEntry(Float.parseFloat(categoryValues.get(i).getValue()),categoryValues.get(i).getType(),categoryValues.get(i).getId()));
+                        }
                     }
                 }
                 if (NoOfEmp.size() == 0) {

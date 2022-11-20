@@ -37,6 +37,7 @@ import java.util.ArrayList;
 import oracle.sql.BLOB;
 import ttit.com.shuvo.icomerp.R;
 import ttit.com.shuvo.icomerp.WaitProgress;
+import ttit.com.shuvo.icomerp.arrayList.UserAccessList;
 import ttit.com.shuvo.icomerp.arrayList.UserDesignation;
 import ttit.com.shuvo.icomerp.arrayList.UserInfoList;
 import ttit.com.shuvo.icomerp.mainBoard.MainMenu;
@@ -121,6 +122,7 @@ public class Login extends AppCompatActivity {
     String userId = "";
     public static ArrayList<UserInfoList> userInfoLists;
     public static ArrayList<UserDesignation> userDesignations;
+    public static ArrayList<UserAccessList> userAccessLists;
 
     String emp_id = "";
     int live_loc_flag = 0;
@@ -132,6 +134,7 @@ public class Login extends AppCompatActivity {
 
         userInfoLists = new ArrayList<>();
         userDesignations = new ArrayList<>();
+        userAccessLists = new ArrayList<>();
 
         softName = findViewById(R.id.name_of_soft_login);
         imageView = findViewById(R.id.erp_image);
@@ -574,6 +577,7 @@ public class Login extends AppCompatActivity {
 
             userInfoLists = new ArrayList<>();
             userDesignations = new ArrayList<>();
+            userAccessLists = new ArrayList<>();
             isApproved = 0;
             isLeaveApproved = 0;
 
@@ -589,6 +593,7 @@ public class Login extends AppCompatActivity {
                 userId = rs.getString(1);
 
             }
+            rs.close();
 
             if (!userId.equals("-1")) {
 
@@ -599,6 +604,7 @@ public class Login extends AppCompatActivity {
                     emp_id = resultSet.getString(6);
                     userInfoLists.add(new UserInfoList(resultSet.getString(1), resultSet.getString(2), resultSet.getString(3), resultSet.getString(4), resultSet.getString(5), resultSet.getString(6),resultSet.getString(7)));
                 }
+                resultSet.close();
 
                 ResultSet resultSet1 = stmt.executeQuery("SELECT DISTINCT JOB_SETUP_MST.JSM_CODE, JOB_SETUP_MST.JSM_NAME TEMP_TITLE, \n" +
                         "JOB_SETUP_DTL.JSD_ID, JOB_SETUP_DTL.JSD_OBJECTIVE, DEPT_MST.DEPT_NAME, \n" +
@@ -617,115 +623,12 @@ public class Login extends AppCompatActivity {
 
                     userDesignations.add(new UserDesignation(resultSet1.getString(1), resultSet1.getString(2), resultSet1.getString(3), resultSet1.getString(4), resultSet1.getString(5), resultSet1.getString(6), resultSet1.getString(7), resultSet1.getString(8), resultSet1.getString(9), resultSet1.getString(10)));
                 }
-
-//                ResultSet resultSet2 = stmt.executeQuery("SELECT COUNT (1) VAL\n" +
-//                        "  FROM DAILY_ATTEN_REQ_MST\n" +
-//                        " WHERE DARM_APP_CODE IN\n" +
-//                        "          (SELECT DAAHL_APP_CODE\n" +
-//                        "             FROM DAILY_ATTEN_APP_HIERARCHY_LOG, DAILY_ATTEN_REQ_MST\n" +
-//                        "            WHERE     DAILY_ATTEN_APP_HIERARCHY_LOG.DAAHL_APP_CODE =\n" +
-//                        "                         DAILY_ATTEN_REQ_MST.DARM_APP_CODE\n" +
-//                        "                  AND NVL (DAILY_ATTEN_REQ_MST.DARM_APPROVED, 0) = 0\n" +
-//                        "                  AND (DAILY_ATTEN_APP_HIERARCHY_LOG.DAAHL_APPROVER_BAND_ID =\n" +
-//                        "                          (SELECT EMP_ID\n" +
-//                        "                             FROM EMP_MST\n" +
-//                        "                            WHERE EMP_CODE = '" + userName + "')))");
-//
-//                while (resultSet2.next()) {
-//                    isApproved = resultSet2.getInt(1);
-//                    System.out.println(isApproved);
-//                }
-
-//                ResultSet resultSet3 = stmt.executeQuery("SELECT count(DISTINCT LA_APP_CODE)\n" +
-//                        "  FROM (SELECT LA.LA_APP_CODE\n" +
-//                        "          FROM LEAVE_APPLICATION LA\n" +
-//                        "         WHERE     LA.LA_EMP_ID IN\n" +
-//                        "                      (SELECT C.JOB_EMP_ID\n" +
-//                        "                         FROM JOB_SETUP_MST A,\n" +
-//                        "                              JOB_SETUP_DTL B,\n" +
-//                        "                              (SELECT JOB_EMP_ID, JOB_JSD_ID\n" +
-//                        "                                 FROM EMP_JOB_HISTORY EJH\n" +
-//                        "                                WHERE JOB_ID =\n" +
-//                        "                                         (SELECT MAX (JOB_ID)\n" +
-//                        "                                            FROM EMP_JOB_HISTORY EH\n" +
-//                        "                                           WHERE EJH.JOB_EMP_ID =\n" +
-//                        "                                                    EH.JOB_EMP_ID)) C,\n" +
-//                        "                              DESIG_MST     D   --, leave_approval_hierarchy e\n" +
-//                        "                        WHERE     A.JSM_ID = B.JSD_JSM_ID\n" +
-//                        "                              AND C.JOB_JSD_ID = B.JSD_ID\n" +
-//                        "                              AND D.DESIG_ID = A.JSM_DESIG_ID\n" +
-//                        "                              AND D.DESIG_PRIORITY IN\n" +
-//                        "                                     (SELECT L.LAH_BAND_NO\n" +
-//                        "                                        FROM LEAVE_APPROVAL_HIERARCHY L\n" +
-//                        "                                       WHERE INSTR (\n" +
-//                        "                                                   ','\n" +
-//                        "                                                || L.LAH_APPROVAL_BAND\n" +
-//                        "                                                || ',',\n" +
-//                        "                                                   ','\n" +
-//                        "                                                || EMP_PACKAGE.GET_BAND_BY_EMP_CODE (\n" +
-//                        "                                                      '" + userName + "')\n" +
-//                        "                                                || ',') > 0))\n" +
-//                        "               AND NVL (LA.LA_APPROVED, 0) = 0\n" +
-//                        "        UNION ALL\n" +
-//                        "        SELECT LA.LA_APP_CODE\n" +
-//                        "          FROM LEAVE_APPLICATION LA\n" +
-//                        "         WHERE     LA.LA_EMP_ID IN\n" +
-//                        "                      (SELECT C.JOB_EMP_ID\n" +
-//                        "                         FROM JOB_SETUP_MST A,\n" +
-//                        "                              JOB_SETUP_DTL B,\n" +
-//                        "                              (SELECT JOB_EMP_ID, JOB_JSD_ID\n" +
-//                        "                                 FROM EMP_JOB_HISTORY EJH\n" +
-//                        "                                WHERE JOB_ID =\n" +
-//                        "                                         (SELECT MAX (JOB_ID)\n" +
-//                        "                                            FROM EMP_JOB_HISTORY EH\n" +
-//                        "                                           WHERE EJH.JOB_EMP_ID =\n" +
-//                        "                                                    EH.JOB_EMP_ID)) C,\n" +
-//                        "                              DESIG_MST     D   --, leave_approval_hierarchy e\n" +
-//                        "                        WHERE     A.JSM_ID = B.JSD_JSM_ID\n" +
-//                        "                              AND C.JOB_JSD_ID = B.JSD_ID\n" +
-//                        "                              AND D.DESIG_ID = A.JSM_DESIG_ID\n" +
-//                        "                              AND D.DESIG_PRIORITY IN\n" +
-//                        "                                     ( (SELECT LAH.LAH_BAND_NO\n" +
-//                        "                                          FROM LEAVE_APPROVAL_HIERARCHY LAH\n" +
-//                        "                                         WHERE INSTR (\n" +
-//                        "                                                     ','\n" +
-//                        "                                                  || LAH.LAH_SP_APPROVAL_CODE\n" +
-//                        "                                                  || ',',\n" +
-//                        "                                                  ',' || '" + userName + "' || ',') > 0)))\n" +
-//                        "               AND NVL (LA.LA_APPROVED, 0) = 0)\n" +
-//                        " WHERE LA_APP_CODE NOT IN\n" +
-//                        "       (SELECT CASE\n" +
-//                        "          WHEN COM_PACK.GET_EMPLOYEE_ID_BY_USER ('" + userName + "') =\n" +
-//                        "                  LAD_FORWARD_TO_ID\n" +
-//                        "          THEN\n" +
-//                        "             'No code'\n" +
-//                        "          ELSE\n" +
-//                        "             GET_LEAVE_APP_CODE (LAD_LA_ID)\n" +
-//                        "       END\n" +
-//                        "  FROM LEAVE_APPLICATION_DTL\n" +
-//                        " WHERE LAD_ID IN (  SELECT MAX (LAD_ID)\n" +
-//                        "                      FROM LEAVE_APPLICATION_DTL D, LEAVE_APPLICATION M\n" +
-//                        "                     WHERE M.LA_ID = D.LAD_LA_ID\n" +
-//                        "                  GROUP BY LAD_LA_ID))");
-//
-//                while (resultSet3.next()) {
-//                    isLeaveApproved = resultSet3.getInt(1);
-//                    System.out.println("LEAVE PRRR: " + isLeaveApproved);
-//                }
-
-//                ResultSet resultSet4 = stmt.executeQuery("select EMP_LIVE_LOC_TRACKER_FLAG from EMP_MST WHERE EMP_CODE = '"+userName+"'");
-//
-//                while (resultSet4.next()) {
-//                    live_loc_flag = resultSet4.getInt(1);
-//                    System.out.println("LIVE LOCATION FLAG: "+ live_loc_flag);
-//                }
-
+                resultSet1.close();
 
                 infoConnected = true;
 
             }
             System.out.println(stringBuffer);
-
 
             connected = true;
 

@@ -7,10 +7,13 @@
 
         <item android:id="@+id/dashboard"
             android:icon="@drawable/dashboard_24"
-            android:title="Dashboard"/>
+            android:title="@string/msma_13"/>
         <item android:id="@+id/performance_report"
             android:icon="@drawable/performance_icon"
-            android:title="Performance Report"/>
+            android:title="@string/msma_14"/>
+        <item android:id="@+id/user_setup"
+            android:icon="@drawable/user_setup_icon"
+            android:title="@string/msma_15"/>
     </group>
 
     <group
@@ -19,40 +22,40 @@
     <item android:title="Procurement &amp; Inventory"
        >
         <menu>
-            <item android:title="Purchase Requisition Approval"
+            <item android:title="@string/msma_2"
                 android:id="@+id/purchase_req_approval"
                 android:icon="@drawable/purchase_req_approval"/>
-            <item android:title="Purchase Order Approval"
+            <item android:title="@string/msma_3"
                 android:id="@+id/purchase_order_approval"
                 android:icon="@drawable/purchase_order_approved"/>
-            <item android:title="Work Order/Purchase Order"
+            <item android:title="@string/msma_1"
                 android:id="@+id/work_order"
                 android:icon="@drawable/work_order"/>
             <item android:id="@+id/receive"
-                android:title="Receive"
+                android:title="@string/msma_4"
                 android:icon="@drawable/received"/>
             <item android:id="@+id/stock_qty"
-                android:title="Stock Overview"
+                android:title="@string/msma_5"
                 android:icon="@drawable/overview"/>
             <item android:id="@+id/stock_qty_item_wise"
-                android:title="Item Wise Stock"
+                android:title="@string/msma_6"
                 android:icon="@drawable/stock"/>
             <item android:id="@+id/re_order"
-                android:title="Re-Order"
+                android:title="@string/msma_7"
                 android:icon="@drawable/reorder"/>
-            <item android:title="Procurement Relations"
+            <item android:title="@string/msma_8"
                 android:id="@+id/relations_of"
                 android:icon="@drawable/relation_icon"/>
-            <item android:title="Store Ledger"
+            <item android:title="@string/msma_9"
                 android:id="@+id/stock_ledger"
                 android:icon="@drawable/ledger"/>
-            <item android:title="Inventory Ledger Book"
+            <item android:title="@string/msma_10"
                 android:id="@+id/inventory_ledger_book"
                 android:icon="@drawable/inventory"/>
-            <item android:title="Item Receive/Issue Register"
+            <item android:title="@string/msma_11"
                 android:id="@+id/item_receive_issue_reg"
                 android:icon="@drawable/item_receive"/>
-            <item android:title="All Items"
+            <item android:title="@string/msma_12"
                 android:id="@+id/all_items"
                 android:icon="@drawable/all_items_icon"/>
 
@@ -62,24 +65,24 @@
     <group
         android:id="@+id/sales_group"
         android:checkableBehavior="none">
-        <item android:title="Sales">
+        <item android:title="Sales &amp; Delivery">
             <menu>
-                <item android:title="Sales Order"
+                <item android:title="@string/msma_16"
                     android:id="@+id/sales_order"
                     android:icon="@drawable/sales_order"/>
-                <item android:title="Delivery Challan"
+                <item android:title="@string/msma_17"
                     android:id="@+id/deliver_challan"
                     android:icon="@drawable/delivery_c"/>
-                <item android:title="Sales Order &amp; Delivery Summary"
+                <item android:title="@string/msma_18"
                     android:id="@+id/sales_order_delivery_challan"
                     android:icon="@drawable/sd_report"/>
-                <item android:title="Top N Item List"
+                <item android:title="@string/msma_19"
                     android:id="@+id/top_n_item"
                     android:icon="@drawable/top_n"/>
-                <item android:title="Product Wise Assessment"
+                <item android:title="@string/msma_20"
                     android:id="@+id/product_wise_assessment"
                     android:icon="@drawable/assessment"/>
-                <item android:title="Graphical Summary (Order &amp; Delivery)"
+                <item android:title="@string/msma_21"
                     android:id="@+id/graphical_summary"
                     android:icon="@drawable/graph_sum"/>
             </menu>
@@ -96,37 +99,37 @@
 <!--                <item android:title="Customer"-->
 <!--                    android:id="@+id/customer"-->
 <!--                    android:icon="@drawable/customer"/>-->
-                <item android:title="Chart of Accounts"
+                <item android:title="@string/msma_22"
                     android:id="@+id/chart_of_acc"
                     android:icon="@drawable/chart_acc"/>
-                <item android:title="Credit Voucher Approval"
+                <item android:title="@string/msma_23"
                     android:id="@+id/credit_voucher_approved"
                     android:icon="@drawable/credit_approved"/>
-                <item android:title="Debit Voucher Approval"
+                <item android:title="@string/msma_24"
                     android:id="@+id/debit_voucher_approved"
                     android:icon="@drawable/debit_voucher_approved"/>
-                <item android:title="Journal Voucher Approval"
+                <item android:title="@string/msma_25"
                     android:id="@+id/journal_voucher_approved"
                     android:icon="@drawable/journal_voucher_approved"/>
-                <item android:title="Voucher Transaction"
+                <item android:title="@string/msma_26"
                     android:id="@+id/voucher_transaction"
                     android:icon="@drawable/voucher_trans"/>
-                <item android:title="Account Ledger"
+                <item android:title="@string/msma_27"
                     android:id="@+id/accnt_ledger"
                     android:icon="@drawable/account_ledger"/>
-                <item android:title="Party Summary Ledger"
+                <item android:title="@string/msma_28"
                     android:id="@+id/party_summary_ledger"
                     android:icon="@drawable/party_summary_ledger"/>
-                <item android:title="Party Payable/Receivable Summary"
+                <item android:title="@string/msma_29"
                     android:id="@+id/party_pay_recv_summary_ledger"
                     android:icon="@drawable/party_pay_recv_summary_icon"/>
-                <item android:title="Bank Balance"
+                <item android:title="@string/msma_30"
                     android:id="@+id/bank_balance"
                     android:icon="@drawable/bank_balance"/>
-                <item android:title="Cash Transaction"
+                <item android:title="@string/msma_31"
                     android:id="@+id/cash_trans"
                     android:icon="@drawable/cash_trans"/>
-                <item android:title="Party List"
+                <item android:title="@string/msma_32"
                     android:id="@+id/party_all_list"
                     android:icon="@drawable/party_list_icon"/>
 

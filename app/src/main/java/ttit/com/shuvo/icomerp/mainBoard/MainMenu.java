@@ -20,6 +20,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -44,6 +45,7 @@ import java.util.Collections;
 import java.util.List;
 
 import ttit.com.shuvo.icomerp.WaitProgress;
+import ttit.com.shuvo.icomerp.arrayList.UserAccessList;
 import ttit.com.shuvo.icomerp.arrayList.UserDesignation;
 import ttit.com.shuvo.icomerp.arrayList.UserInfoList;
 import ttit.com.shuvo.icomerp.fragments.AccountLedger;
@@ -76,15 +78,18 @@ import ttit.com.shuvo.icomerp.fragments.SalesOrderFragment;
 import ttit.com.shuvo.icomerp.fragments.StockFragment;
 import ttit.com.shuvo.icomerp.fragments.StockLedgerFragment;
 import ttit.com.shuvo.icomerp.fragments.TopNItem;
+import ttit.com.shuvo.icomerp.fragments.UserSetupFragment;
 import ttit.com.shuvo.icomerp.fragments.VoucherTransaction;
 import ttit.com.shuvo.icomerp.fragments.WorkOrderFragment;
 import ttit.com.shuvo.icomerp.login.Login;
 
+import static ttit.com.shuvo.icomerp.MainActivity.buttonLabelLists;
 import static ttit.com.shuvo.icomerp.OracleConnection.createConnection;
 import static ttit.com.shuvo.icomerp.login.Login.CompanyName;
 import static ttit.com.shuvo.icomerp.login.Login.SoftwareName;
 import static ttit.com.shuvo.icomerp.login.Login.isApproved;
 import static ttit.com.shuvo.icomerp.login.Login.isLeaveApproved;
+import static ttit.com.shuvo.icomerp.login.Login.userAccessLists;
 import static ttit.com.shuvo.icomerp.login.Login.userDesignations;
 import static ttit.com.shuvo.icomerp.login.Login.userInfoLists;
 
@@ -373,15 +378,44 @@ public class MainMenu extends AppCompatActivity implements NavigationView.OnNavi
 //                return String.valueOf((int) Math.floor(value));
 //            }
 //        });
-
-
         new CheckLogin().execute();
-
-
-
 
     }
 
+    public void userCheck() {
+        Menu menu = navigationView.getMenu();
+        String dd = String.valueOf(R.string.msma_1);
+        System.out.println(dd);
+        //userAccessLists;
+        for (int i = 0 ; i < buttonLabelLists.size(); i++) {
+            menu.findItem(buttonLabelLists.get(i).getAndroid_id()).setVisible(false);
+        }
+        if (userAccessLists != null) {
+            if (userAccessLists.size() != 0) {
+                for (int i = 0 ; i < buttonLabelLists.size(); i++) {
+                    for (int j = 0; j < userAccessLists.size(); j++) {
+                        if (Integer.parseInt(userAccessLists.get(j).getMsma_id()) == buttonLabelLists.get(i).getMsma_id()) {
+                            if (Integer.parseInt(userAccessLists.get(j).getMsma_view()) == 1) {
+                                menu.findItem(buttonLabelLists.get(i).getAndroid_id()).setVisible(true);
+                            }
+                        }
+                    }
+                }
+            }
+            else {
+                for (int i = 0 ; i < buttonLabelLists.size(); i++) {
+                    menu.findItem(buttonLabelLists.get(i).getAndroid_id()).setVisible(true);
+                }
+            }
+        }
+        else {
+            for (int i = 0 ; i < buttonLabelLists.size(); i++) {
+                menu.findItem(buttonLabelLists.get(i).getAndroid_id()).setVisible(true);
+            }
+        }
+
+
+    }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -516,6 +550,10 @@ public class MainMenu extends AppCompatActivity implements NavigationView.OnNavi
                 break;
             case R.id.performance_report:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new PerformanceFragment()).commit();
+                item.setChecked(true);
+                break;
+            case R.id.user_setup:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new UserSetupFragment()).commit();
                 item.setChecked(true);
                 break;
 //            case R.id.supplier:
@@ -663,6 +701,7 @@ public class MainMenu extends AppCompatActivity implements NavigationView.OnNavi
 
                 conn = false;
                 connected = false;
+                userCheck();
 
                 if (bundle == null) {
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new DashboardFragment()).commit();
@@ -710,6 +749,7 @@ public class MainMenu extends AppCompatActivity implements NavigationView.OnNavi
 
             String userName = userInfoLists.get(0).getUserName();
             String userId = userInfoLists.get(0).getUserId();
+            userAccessLists = new ArrayList<>();
 
             if (userId != null) {
                 if (!userId.isEmpty()) {
@@ -747,6 +787,19 @@ public class MainMenu extends AppCompatActivity implements NavigationView.OnNavi
             callableStatement1.execute();
 
             callableStatement1.close();
+
+            ResultSet resultSet3 = stmt.executeQuery("Select distinct IMSA.MSMA_ID, IMSA.MSMA_LEBEL_NAME, IGPA.GPVA_VIEW\n" +
+                    "FROM ISP_GROUP_PRIVILEGE_ANDROAID IGPA, ISP_MODULE_SUB_MODULE_ANDROAID IMSA, ISP_USER_GROUP_MODULE_ANDROID IUGMA\n" +
+                    "WHERE IMSA.msma_id = IUGMA.USGRMA_MSMA_ID\n" +
+                    "and IGPA.gpva_group_id = IUGMA.USGRMA_GROUP_ID\n" +
+                    "AND IUGMA.USGRMA_USER_ID = "+userId+"\n" +
+                    "order by IMSA.MSMA_ID");
+
+            while (resultSet3.next()) {
+                userAccessLists.add(new UserAccessList(resultSet3.getString(1),resultSet3.getString(2),resultSet3.getString(3)));
+            }
+
+            resultSet3.close();
 
 
             connected = true;

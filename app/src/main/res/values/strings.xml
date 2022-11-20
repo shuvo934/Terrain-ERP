@@ -1,7 +1,40 @@
 <resources>
     <string name="app_name">Terrain ERP</string>
+    <string name="version_control">Version 10</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="msma_1">Work Order/Purchase Order</string>
+    <string name="msma_5">Stock Overview</string>
+    <string name="msma_2">Purchase Requisition Approval</string>
+    <string name="msma_3">Purchase Order Approval</string>
+    <string name="msma_4">Receive</string>
+    <string name="msma_6">Item Wise Stock</string>
+    <string name="msma_7">Re-Order</string>
+    <string name="msma_8">Procurement Relations</string>
+    <string name="msma_9">Store Ledger</string>
+    <string name="msma_10">Inventory Ledger Book</string>
+    <string name="msma_11">Item Receive/Issue Register</string>
+    <string name="msma_12">All Items</string>
+    <string name="msma_13">Dashboard</string>
+    <string name="msma_14">Performance Report</string>
+    <string name="msma_15">User Setup</string>
+    <string name="msma_16">Sales Order</string>
+    <string name="msma_17">Delivery Challan</string>
+    <string name="msma_18">Sales Order &amp; Delivery Summary</string>
+    <string name="msma_19">Top N Item List</string>
+    <string name="msma_20">Product Wise Assessment</string>
+    <string name="msma_21">Graphical Summary (Order &amp; Delivery)</string>
+    <string name="msma_22">Chart of Accounts</string>
+    <string name="msma_23">Credit Voucher Approval</string>
+    <string name="msma_24">Debit Voucher Approval</string>
+    <string name="msma_25">Journal Voucher Approval</string>
+    <string name="msma_26">Voucher Transaction</string>
+    <string name="msma_27">Account Ledger</string>
+    <string name="msma_28">Party Summary Ledger</string>
+    <string name="msma_29">Party Payable/Receivable Summary</string>
+    <string name="msma_30">Bank Balance</string>
+    <string name="msma_31">Cash Transaction</string>
+    <string name="msma_32">Party List</string>
 </resources>

@@ -22,12 +22,21 @@
     <item android:title="Procurement &amp; Inventory"
        >
         <menu>
+            <item android:title="@string/msma_33"
+                android:id="@+id/purchase_requisition"
+                android:icon="@drawable/purchase_req_icon"/>
             <item android:title="@string/msma_2"
                 android:id="@+id/purchase_req_approval"
                 android:icon="@drawable/purchase_req_approval"/>
+            <item android:title="@string/msma_34"
+                android:id="@+id/purchase_order"
+                android:icon="@drawable/purchase_order_icon"/>
             <item android:title="@string/msma_3"
                 android:id="@+id/purchase_order_approval"
-                android:icon="@drawable/purchase_order_approved"/>
+                android:icon="@drawable/purchase_order_approved_icon"/>
+            <item android:title="@string/msma_35"
+                android:id="@+id/purchase_receive"
+                android:icon="@drawable/material_receive_icon"/>
             <item android:title="@string/msma_1"
                 android:id="@+id/work_order"
                 android:icon="@drawable/work_order"/>

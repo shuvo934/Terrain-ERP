@@ -26,7 +26,7 @@
                     android:layout_height="24dp"
                     android:id="@+id/w_o_logo"
                     android:layout_centerVertical="true"
-                    android:src="@drawable/purchase_order_approved"
+                    android:src="@drawable/purchase_order_approved_icon"
                     app:tint="@color/on_primary" />
 
                 <TextView

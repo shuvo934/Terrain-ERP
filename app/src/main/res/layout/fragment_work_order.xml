@@ -40,7 +40,7 @@
                         android:layout_marginStart="16dp"
                         android:layout_toEndOf="@+id/w_o_logo"
                         android:fontFamily="@font/russo_one"
-                        android:text="Work Order/Purchase Order"
+                        android:text="Work Order/Purchase Order Overview"
                         android:textColor="@color/on_primary"
                         android:textSize="17sp" />
 

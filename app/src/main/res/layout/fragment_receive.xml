@@ -40,7 +40,7 @@
                         android:layout_marginStart="16dp"
                         android:layout_toEndOf="@+id/r_logo"
                         android:fontFamily="@font/russo_one"
-                        android:text="Receive"
+                        android:text="Receive Overview"
                         android:textColor="@color/on_primary"
                         android:textSize="17sp" />
 

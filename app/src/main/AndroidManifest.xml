@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="ttit.com.shuvo.icomerp">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="ttit.com.shuvo.terrainerp">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -12,14 +13,16 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.ICOMERP">
-        <activity android:name=".login.Login"/>
+        android:usesCleartextTraffic="true"
+        android:theme="@style/Theme.ICOMERP"
+        tools:targetApi="m">
+        <activity android:name="ttit.com.shuvo.terrainerp.login.Login"/>
         <activity
-            android:name=".mainBoard.MainMenu"
+            android:name="ttit.com.shuvo.terrainerp.mainBoard.MainMenu"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan"/>
-        <activity android:name=".MainActivity"
+        <activity android:name="ttit.com.shuvo.terrainerp.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

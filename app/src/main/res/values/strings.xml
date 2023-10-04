@@ -1,15 +1,15 @@
 <resources>
     <string name="app_name">Terrain ERP</string>
-    <string name="version_control">Version 10</string>
+    <string name="version_control">Version 12</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="msma_1">Work Order/Purchase Order</string>
+    <string name="msma_1">Work Order/Purchase Order Overview</string>
     <string name="msma_5">Stock Overview</string>
     <string name="msma_2">Purchase Requisition Approval</string>
     <string name="msma_3">Purchase Order Approval</string>
-    <string name="msma_4">Receive</string>
+    <string name="msma_4">Receive Overview</string>
     <string name="msma_6">Item Wise Stock</string>
     <string name="msma_7">Re-Order</string>
     <string name="msma_8">Procurement Relations</string>
@@ -37,4 +37,7 @@
     <string name="msma_30">Bank Balance</string>
     <string name="msma_31">Cash Transaction</string>
     <string name="msma_32">Party List</string>
+    <string name="msma_33">Purchase Requisition</string>
+    <string name="msma_34">Purchase Order</string>
+    <string name="msma_35">Purchase Receive</string>
 </resources>

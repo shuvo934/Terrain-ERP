@@ -299,9 +299,9 @@ public class DashboardFragment extends Fragment {
         lineChart.setDoubleTapToZoomEnabled(false);
 
         lineChart.getAxisRight().setEnabled(false);
-        lineChart.getAxisLeft().setAxisMinValue(0);
+        lineChart.getAxisLeft().setAxisMinimum(0);
         lineChart.getLegend().setEnabled(false);
-        lineChart.getAxisLeft().mAxisMinimum = 5000f;
+        //lineChart.getAxisLeft().mAxisMinimum = 5000f;
         lineChart.getAxisLeft().setTextColor(Color.GRAY);
         lineChart.getAxisLeft().setXOffset(10f);
         lineChart.getAxisLeft().setTextSize(8);

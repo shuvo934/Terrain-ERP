@@ -1,51 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/drawer"
-    tools:context=".mainBoard.MainMenu"
-    tools:openDrawer="end"
-    xmlns:android="http://schemas.android.com/apk/res/android" >
-    
-    <com.google.android.material.navigation.NavigationView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        app:headerLayout="@layout/header"
-        android:id="@+id/navigation"
-        app:menu="@menu/nav_menu"
-        android:background="@color/back_color"
-        app:itemTextColor="@color/primary"
-        app:itemMaxLines="2"
-        android:scrollbars="vertical"
-        android:layout_gravity="end"
-        app:itemIconTint="@color/on_primary"/>
+    android:background="#031A5F"
+    android:id="@+id/main_menu_root"
+    tools:context=".mainBoard.MainMenu">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.drawerlayout.widget.DrawerLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/back_color"
-        >
+        android:id="@+id/drawer"
+        tools:openDrawer="end">
 
-        <include
-            android:id="@+id/main_menu_tooooooll"
-            layout="@layout/main_menu_toolbar"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-        <FrameLayout
-            android:id="@+id/fragment_container"
+        <com.google.android.material.navigation.NavigationView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:headerLayout="@layout/header"
+            android:id="@+id/navigation"
+            app:menu="@menu/nav_menu"
+            android:background="@color/back_color"
+            app:itemTextColor="@color/primary"
+            app:itemMaxLines="2"
+            android:scrollbars="vertical"
+            android:layout_gravity="end"
+            app:itemIconTint="@color/on_primary"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/main_menu_tooooooll"/>
+            android:layout_height="match_parent"
+            android:background="@color/back_color">
 
+            <include
+                android:id="@+id/main_menu_tooooooll"
+                layout="@layout/main_menu_toolbar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
+            <FrameLayout
+                android:id="@+id/fragment_container"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/main_menu_tooooooll"/>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
+    </androidx.drawerlayout.widget.DrawerLayout>
 
-</androidx.drawerlayout.widget.DrawerLayout>
+</LinearLayout>
+

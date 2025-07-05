@@ -103,10 +103,11 @@ public class PurhcaseReqItemReqQtyAdapter extends RecyclerView.Adapter<PurhcaseR
                         if (textChanged) {
                             searchingName = reqQty.getText().toString();
                             total_req_qty_pr = 0;
-
-                            mCategoryItem.get(getAdapterPosition()).setReqQty(searchingName);
-                            textChanged = false;
-                            notifyDataSetChanged();
+                            if (!searchingName.isEmpty()) {
+                                mCategoryItem.get(getAdapterPosition()).setReqQty(searchingName);
+                                textChanged = false;
+                                notifyDataSetChanged();
+                            }
 
 
 

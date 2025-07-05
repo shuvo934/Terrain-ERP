@@ -1,10 +1,14 @@
 package ttit.com.shuvo.terrainerp.mainBoard;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
 import androidx.core.view.GravityCompat;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.annotation.SuppressLint;
@@ -122,7 +126,6 @@ public class MainMenu extends AppCompatActivity implements NavigationView.OnNavi
     String brand = "";
     String ipAddress = "";
     String hostUserName = "";
-    String sessionId = "";
     String osName = "";
 
     SharedPreferences sharedPreferences;
@@ -161,6 +164,11 @@ public class MainMenu extends AppCompatActivity implements NavigationView.OnNavi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main_menu_root), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
 
         bundle = savedInstanceState;
         drawerLayout = findViewById(R.id.drawer);
@@ -210,32 +218,32 @@ public class MainMenu extends AppCompatActivity implements NavigationView.OnNavi
 
         emp_id = userInfoLists.get(0).getEmp_id();
 
-        if (userInfoLists.size() != 0) {
-            String firstname = userInfoLists.get(0).getUser_fname();
-            String lastName = userInfoLists.get(0).getUser_lname();
-            if (firstname == null) {
-                firstname = "";
-            }
-            if (lastName == null) {
-                lastName = "";
-            }
-            String empFullName = firstname+" "+lastName;
-            //userName.setText(empFullName);
-        }
+//        if (!userInfoLists.isEmpty()) {
+//            String firstname = userInfoLists.get(0).getUser_fname();
+//            String lastName = userInfoLists.get(0).getUser_lname();
+//            if (firstname == null) {
+//                firstname = "";
+//            }
+//            if (lastName == null) {
+//                lastName = "";
+//            }
+//            String empFullName = firstname+" "+lastName;
+//            userName.setText(empFullName);
+//        }
 
-        if (userDesignations.size() != 0) {
-            String jsmName = userDesignations.get(0).getJsm_name();
-            if (jsmName == null) {
-                jsmName = "";
-            }
-            //designation.setText(jsmName);
-
-            String deptName = userDesignations.get(0).getDiv_name();
-            if (deptName == null) {
-                deptName = "";
-            }
-            //department.setText(deptName);
-        }
+//        if (!userDesignations.isEmpty()) {
+//            String jsmName = userDesignations.get(0).getJsm_name();
+//            if (jsmName == null) {
+//                jsmName = "";
+//            }
+//            //designation.setText(jsmName);
+//
+//            String deptName = userDesignations.get(0).getDiv_name();
+//            if (deptName == null) {
+//                deptName = "";
+//            }
+//            //department.setText(deptName);
+//        }
 
         appName.setText(SoftwareName);
         //comp.setText(CompanyName);
@@ -382,6 +390,42 @@ public class MainMenu extends AppCompatActivity implements NavigationView.OnNavi
 //            }
 //        });
 //        new CheckLogin().execute();
+
+        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                if (drawerLayout.isDrawerOpen(GravityCompat.END)) {
+                    drawerLayout.closeDrawer(GravityCompat.END);
+                } else {
+                    if (!dashboardFront) {
+                        if (bundle == null) {
+                            dashboardFront = true;
+                            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new DashboardFragment()).commit();
+                        }
+                    }
+                    else {
+                        MaterialAlertDialogBuilder alertDialogBuilder = new MaterialAlertDialogBuilder(MainMenu.this)
+                                .setTitle("EXIT!")
+                                .setMessage("Do You Want to Exit?")
+                                .setIcon(R.drawable.erp)
+                                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        System.exit(0);
+                                    }
+                                })
+                                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        //Do nothing
+                                    }
+                                });
+                        AlertDialog alertDialog = alertDialogBuilder.create();
+                        alertDialog.show();
+                    }
+                }
+            }
+        });
         loginLog();
 
     }
@@ -617,43 +661,6 @@ public class MainMenu extends AppCompatActivity implements NavigationView.OnNavi
         }
         drawerLayout.closeDrawer(GravityCompat.END);
         return true;
-    }
-
-
-
-    @Override
-    public void onBackPressed() {
-
-        if (drawerLayout.isDrawerOpen(GravityCompat.END)) {
-            drawerLayout.closeDrawer(GravityCompat.END);
-        } else {
-            if (!dashboardFront) {
-                if (bundle == null) {
-                    dashboardFront = true;
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new DashboardFragment()).commit();
-                }
-            }
-            else {
-                MaterialAlertDialogBuilder alertDialogBuilder = new MaterialAlertDialogBuilder(MainMenu.this)
-                        .setTitle("EXIT!")
-                        .setMessage("Do You Want to Exit?")
-                        .setIcon(R.drawable.erp)
-                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                System.exit(0);
-                            }
-                        })
-                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                //Do nothing
-                            }
-                        });
-                AlertDialog alertDialog = alertDialogBuilder.create();
-                alertDialog.show();
-            }
-        }
     }
 
     public static String getIPAddress(boolean useIPv4) {
